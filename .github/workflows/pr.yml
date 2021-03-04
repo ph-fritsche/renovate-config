@@ -27,44 +27,51 @@ jobs:
       - name: setup
         run: set -o pipefail
 
-      - uses: actions/checkout@v2
+      - name: checkout base_ref
+        uses: actions/checkout@v2
         with:
           ref: ${{ github.base_ref }}
 
-      - name: 'renovate dry run: base'
+      - name: renovate dry run on base_ref
         run: npx -p renovate renovate --dry-run true 2>&1 | tee renovate-ci.log
         env:
           GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_DRYRUN }}
 
-      - run: >
-          git stash -- renovate-ci.log
+      - name: stash log for base_ref
+        run: >
+          git add -f renovate-ci.log
+          && git stash -- renovate-ci.log
 
-      - uses: actions/checkout@v2
+      - name: checkout head_ref
+        uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
 
-      - run: |
+      - name: configure git user
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - run: >
+      - name: pop stash and commit log for base_ref
+        run: >
           git stash pop
           && git add -f renovate-ci.log
           && git commit -m "ci: log (base)"
 
-      - name: 'renovate dry run: head'
+      - name: renovate dry run on head_ref
         run: npx -p renovate renovate --dry-run true 2>&1 | tee renovate-ci.log
         env:
           GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_DRYRUN }}
 
-      - run: >
+      - name: commit log for head_ref
+        run: >
           git add -f renovate-ci.log
           && git commit -m "ci: log (head)"
           && echo "logCommit=$(git rev-parse HEAD)" >>$GITHUB_ENV
 
-      - run: >
-          git push -f origin HEAD:log
+      - name: push commits
+        run: git push -f origin HEAD:log
 
-      - name: Add comment linking to the log branch
+      - name: Add comment linking to the log commit
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
