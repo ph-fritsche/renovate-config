@@ -33,7 +33,7 @@ jobs:
       - name: 'renovate dry run: base'
         run: npx -p renovate renovate --dry-run true > renovate-ci.log
         env:
-          GIHUB_COM_TOKEN: ${{ secrets.RENOVATE_DRYRUN }}
+          GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_DRYRUN }}
 
       - run: >
           git stash -- renovate-ci.log
@@ -53,7 +53,7 @@ jobs:
       - name: 'renovate dry run: head'
         run: npx -p renovate renovate --dry-run true > renovate-ci.log
         env:
-          GIHUB_COM_TOKEN: ${{ secrets.RENOVATE_DRYRUN }}
+          GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_DRYRUN }}
 
       - run: >
           git add -f renovate-ci.log
