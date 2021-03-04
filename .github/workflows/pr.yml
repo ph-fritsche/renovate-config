@@ -24,9 +24,6 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - run: mkdir log
 
       - uses: actions/checkout@v2
@@ -45,6 +42,9 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - run: >
           git stash pop
           && git add -f renovate-ci.log
