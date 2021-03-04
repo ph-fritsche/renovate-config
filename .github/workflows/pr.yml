@@ -1,0 +1,73 @@
+name: PR
+
+on:
+  pull_request:
+
+env:
+  LOG_LEVEL: debug
+  RENOVATE_CONFIG_FILE: renovate-ci.js
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: validation
+        run: npx -p renovate renovate-config-validator
+
+  dryrun:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: mkdir log
+
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.base_ref }}
+
+      - name: 'renovate dry run: base'
+        run: npx -p renovate renovate --dry-run true > renovate-ci.log
+        env:
+          GIHUB_COM_TOKEN: {{ secrets.RENOVATE_DRYRUN }}
+
+      - run: >
+          git stash -- renovate-ci.log
+
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - run: >
+          git stash pop
+          && git add -f renovate-ci.log
+          && git commit -m "ci: log (base)"
+
+      - name: 'renovate dry run: head'
+        run: npx -p renovate renovate --dry-run true > renovate-ci.log
+        env:
+          GIHUB_COM_TOKEN: {{ secrets.RENOVATE_DRYRUN }}
+
+      - run: >
+          git add -f renovate-ci.log
+          && git commit -m "ci: log (head)"
+          && echo "logCommit=$(git rev-parse HEAD)" >>$GITHUB_ENV
+
+      - run: >
+          git push -f origin HEAD:log
+
+      - name: Add comment linking to the log branch
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            The changes introduced when merging commit ${{ github.head_ref }}
+            can be viewed [here](https://github.com/${{ github.repository }}/commit/${{ env.logCommit }}).
+
