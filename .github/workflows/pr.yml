@@ -24,7 +24,8 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - run: mkdir log
+      - name: setup
+        run: set -o pipefail
 
       - uses: actions/checkout@v2
         with:
