@@ -1,0 +1,12 @@
+{
+    "name": "example/example",
+    "description": "example",
+    "require": {
+        "symfony/event-dispatcher": "^3.4.5",
+        "symfony/process": "^5.1.2"
+    },
+    "require-dev": {
+        "symfony/console": "^4.1.2",
+        "symfony/finder": "^5.0.1"
+    }
+}
