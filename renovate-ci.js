@@ -1,5 +1,5 @@
 module.exports = {
-    ...require('renovate.json'),
+    ...require('./renovate.json'),
     baseBranches: [
         'example',
     ],
