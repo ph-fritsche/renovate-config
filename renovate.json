@@ -1,0 +1,42 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":automergeMinor",
+    ":semanticCommits"
+  ],
+  "ignorePresets": [
+    ":semanticPrefixFixDepsChoreOthers"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "commitMessageAction": "update lock file",
+    "schedule": [
+      "before 5am"
+    ],
+    "groupName": "lock"
+  },
+  "semanticCommits": "enabled",
+  "semanticCommitType": "chore",
+  "semanticCommitScope": "deps",
+  "timezone": "UTC",
+  "rangeStrategy": "widen",
+  "packageRules": [
+    {
+      "matchDepTypes": [
+        "require",
+        "dependencies",
+        "peerDependencies"
+      ],
+      "semanticCommitType": "perf"
+    },
+    {
+      "matchDepTypes": [
+        "devDependencies",
+        "peerDevDependencies",
+        "require-dev"
+      ],
+      "rangeStrategy": "replace"
+    }
+  ]
+}
