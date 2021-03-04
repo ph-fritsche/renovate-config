@@ -82,6 +82,6 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
-            The changes introduced when merging commit ${{ github.head_ref }}
+            The changes introduced when merging commit ${{ github.sha }}
             can be viewed [here](https://github.com/${{ github.repository }}/commit/${{ env.logCommit }}).
 
