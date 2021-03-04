@@ -26,15 +26,15 @@
       "matchDepTypes": [
         "require",
         "dependencies",
-        "peerDependencies"
+        "peerDependencies",
+        "optionalDependencies"
       ],
       "semanticCommitType": "perf"
     },
     {
       "matchDepTypes": [
-        "devDependencies",
-        "peerDevDependencies",
-        "require-dev"
+        "require-dev",
+        "devDependencies"
       ],
       "rangeStrategy": "replace"
     }
