@@ -13,6 +13,7 @@ jobs:
       - uses: bahmutov/npm-install@v1
         with:
           install-command: npm -g i renovate
+          useLockFile: false
 
       - uses: actions/checkout@v2
 
