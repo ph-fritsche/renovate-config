@@ -14,7 +14,7 @@ jobs:
         path: ~./npm
         key: npm-renovate
     - name: install renovate
-      run: npm -g i renovate
+      run: sudo npm -g i renovate
 
     - name: checkout
       uses: actions/checkout@v2
@@ -58,7 +58,7 @@ jobs:
         path: ~./npm
         key: npm-renovate
     - name: install renovate
-      run: npm -g i renovate
+      run: sudo npm -g i renovate
 
     - name: checkout
       uses: actions/checkout@v2
