@@ -10,8 +10,9 @@ jobs:
 
     steps:
     - uses: actions/cache@v2
-      path: ~./npm
-      key: npm-renovate
+      with:
+        path: ~./npm
+        key: npm-renovate
     - name: install renovate
       run: npm -g i renovate
 
@@ -53,8 +54,9 @@ jobs:
 
     steps:
     - uses: actions/cache@v2
-      path: ~./npm
-      key: npm-renovate
+      with:
+        path: ~./npm
+        key: npm-renovate
     - name: install renovate
       run: npm -g i renovate
 
