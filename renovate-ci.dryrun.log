@@ -1,0 +1,3739 @@
+DEBUG: Using RE2 as regex engine
+DEBUG: Parsing configs
+DEBUG: Checking for config file in /home/runner/work/renovate-config/renovate-config/renovate-ci.js
+DEBUG: Ignoring preset :semanticPrefixFixDepsChoreOthers in [config:base]
+DEBUG: File config
+       "config": {
+         "description": [
+           "Separate major versions of dependencies into individual branches/PRs",
+           "Do not separate patch and minor upgrades into separate PRs for the same dependency",
+           "Upgrade to unstable versions only if the existing version is unstable",
+           "Raise PRs immediately (after branch is created)",
+           "Keep existing branches updated even when not scheduled",
+           "Disable automerging feature - wait for humans to merge all PRs",
+           "Ignore `node_modules`, `bower_components`, `vendor` and various test/tests directories",
+           "Autodetect whether to pin dependencies or maintain ranges",
+           "Rate limit PR creation to a maximum of two per hour",
+           "Limit to maximum 20 open PRs at any time",
+           "Group known monorepo packages together",
+           "Use curated list of recommended non-monorepo package groupings",
+           "Ignore spring cloud 1.x releases",
+           "Ignore http4s digest-based 1.x milestones",
+           "Automerge patch and minor upgrades if they pass tests",
+           "Use semantic prefixes for commit messages and PR titles"
+         ],
+         "separateMajorMinor": true,
+         "separateMinorPatch": false,
+         "ignoreUnstable": true,
+         "prCreation": "immediate",
+         "updateNotScheduled": true,
+         "automerge": false,
+         "ignorePaths": [
+           "**/node_modules/**",
+           "**/bower_components/**",
+           "**/vendor/**",
+           "**/examples/**",
+           "**/__tests__/**",
+           "**/test/**",
+           "**/tests/**",
+           "**/__fixtures__/**"
+         ],
+         "rangeStrategy": "widen",
+         "prHourlyLimit": 2,
+         "prConcurrentLimit": 20,
+         "packageRules": [
+           {
+             "description": [
+               "ag-grid monorepo",
+               "Group packages from ag-grid monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ag-grid/ag-grid"],
+             "groupName": "ag-grid monorepo"
+           },
+           {
+             "description": [
+               "arcus event-grid monorepo",
+               "Group packages from arcus event-grid monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/arcus-azure/arcus.eventgrid"
+             ],
+             "groupName": "arcus event-grid monorepo"
+           },
+           {
+             "description": [
+               "arcus security monorepo",
+               "Group packages from arcus security monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/arcus-azure/arcus.security"
+             ],
+             "groupName": "arcus security monorepo"
+           },
+           {
+             "description": [
+               "arcus messaging monorepo",
+               "Group packages from arcus messaging monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/arcus-azure/arcus.messaging"
+             ],
+             "groupName": "arcus messaging monorepo"
+           },
+           {
+             "description": [
+               "arcus observability monorepo",
+               "Group packages from arcus observability monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/arcus-azure/arcus.observability"
+             ],
+             "groupName": "arcus observability monorepo"
+           },
+           {
+             "description": [
+               "arcus webapi monorepo",
+               "Group packages from arcus webapi monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/arcus-azure/arcus.webapi"],
+             "groupName": "arcus webapi monorepo"
+           },
+           {
+             "description": [
+               "arcus background-jobs monorepo",
+               "Group packages from arcus background-jobs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/arcus-azure/arcus.backgroundjobs"
+             ],
+             "groupName": "arcus background-jobs monorepo"
+           },
+           {
+             "description": [
+               "algolia-react-instantsearch monorepo",
+               "Group packages from algolia-react-instantsearch monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/algolia/react-instantsearch"
+             ],
+             "groupName": "algolia-react-instantsearch monorepo"
+           },
+           {
+             "description": [
+               "angular-eslint monorepo",
+               "Group packages from angular-eslint monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/angular-eslint/angular-eslint"
+             ],
+             "groupName": "angular-eslint monorepo"
+           },
+           {
+             "description": [
+               "apollo-server monorepo",
+               "Group packages from apollo-server monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/apollographql/apollo-server"
+             ],
+             "groupName": "apollo-server monorepo"
+           },
+           {
+             "description": [
+               "aspnet-api-versioning monorepo",
+               "Group packages from aspnet-api-versioning monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/Microsoft/aspnet-api-versioning"
+             ],
+             "groupName": "aspnet-api-versioning monorepo"
+           },
+           {
+             "description": [
+               "aspnet AspNetWebStack monorepo",
+               "Group packages from aspnet AspNetWebStack monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/aspnet/AspNetWebStack"],
+             "groupName": "aspnet AspNetWebStack monorepo"
+           },
+           {
+             "description": [
+               "aspnet Extensions monorepo",
+               "Group packages from aspnet Extensions monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/aspnet/Extensions"],
+             "groupName": "aspnet Extensions monorepo"
+           },
+           {
+             "description": [
+               "aws-cdk monorepo",
+               "Group packages from aws-cdk monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/aws/aws-cdk"],
+             "groupName": "aws-cdk monorepo"
+           },
+           {
+             "description": [
+               "aws-sdk-js-v3 monorepo",
+               "Group packages from aws-sdk-js-v3 monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/aws/aws-sdk-js-v3"],
+             "groupName": "aws-sdk-js-v3 monorepo"
+           },
+           {
+             "description": [
+               "azure azure-libraries-for-net monorepo",
+               "Group packages from azure azure-libraries-for-net monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/Azure/azure-libraries-for-net"
+             ],
+             "groupName": "azure azure-libraries-for-net monorepo"
+           },
+           {
+             "description": [
+               "azure azure-sdk-for-net monorepo",
+               "Group packages from azure azure-sdk-for-net monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Azure/azure-sdk-for-net"],
+             "groupName": "azure azure-sdk-for-net monorepo"
+           },
+           {
+             "description": [
+               "azure azure-storage-net monorepo",
+               "Group packages from azure azure-storage-net monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Azure/azure-storage-net"],
+             "groupName": "azure azure-storage-net monorepo"
+           },
+           {
+             "description": [
+               "bugsnag-js monorepo",
+               "Group packages from bugsnag-js monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/bugsnag/bugsnag-js"],
+             "groupName": "bugsnag-js monorepo"
+           },
+           {
+             "description": [
+               "date-io monorepo",
+               "Group packages from date-io monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/dmtrKovalenko/date-io"],
+             "groupName": "date-io monorepo"
+           },
+           {
+             "description": [
+               "devextreme-reactive monorepo",
+               "Group packages from devextreme-reactive monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/DevExpress/devextreme-reactive"
+             ],
+             "groupName": "devextreme-reactive monorepo"
+           },
+           {
+             "description": [
+               "electron-forge monorepo",
+               "Group packages from electron-forge monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/electron-userland/electron-forge"
+             ],
+             "groupName": "electron-forge monorepo"
+           },
+           {
+             "description": [
+               "feathers-databases monorepo",
+               "Group packages from feathers-databases monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/feathersjs/databases"],
+             "groupName": "feathers-databases monorepo"
+           },
+           {
+             "description": [
+               "ember-decorators monorepo",
+               "Group packages from ember-decorators monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/ember-decorators/ember-decorators"
+             ],
+             "groupName": "ember-decorators monorepo"
+           },
+           {
+             "description": [
+               "graphql-modules monorepo",
+               "Group packages from graphql-modules monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Urigo/graphql-modules"],
+             "groupName": "graphql-modules monorepo"
+           },
+           {
+             "description": [
+               "ionic-native monorepo",
+               "Group packages from ionic-native monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ionic-team/ionic-native"],
+             "groupName": "ionic-native monorepo"
+           },
+           {
+             "description": [
+               "mdc-react monorepo",
+               "Group packages from mdc-react monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "material-components/material-components-web-react"
+             ],
+             "groupName": "mdc-react monorepo"
+           },
+           {
+             "description": [
+               "ngx-formly monorepo",
+               "Group packages from ngx-formly monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ngx-formly/ngx-formly"],
+             "groupName": "ngx-formly monorepo"
+           },
+           {
+             "description": [
+               "ngxs-store monorepo",
+               "Group packages from ngxs-store monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ngxs/store"],
+             "groupName": "ngxs-store monorepo"
+           },
+           {
+             "description": [
+               "reach-ui monorepo",
+               "Group packages from reach-ui monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/reach/reach-ui"],
+             "groupName": "reach-ui monorepo"
+           },
+           {
+             "description": [
+               "react-apollo monorepo",
+               "Group packages from react-apollo monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/apollographql/react-apollo"
+             ],
+             "groupName": "react-apollo monorepo"
+           },
+           {
+             "description": [
+               "react-dnd monorepo",
+               "Group packages from react-dnd monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/react-dnd/react-dnd"],
+             "groupName": "react-dnd monorepo"
+           },
+           {
+             "description": [
+               "react-navigation monorepo",
+               "Group packages from react-navigation monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/react-navigation/react-navigation"
+             ],
+             "groupName": "react-navigation monorepo"
+           },
+           {
+             "description": [
+               "reactivestack-cookies monorepo",
+               "Group packages from reactivestack-cookies monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/reactivestack/cookies"],
+             "groupName": "reactivestack-cookies monorepo"
+           },
+           {
+             "description": [
+               "reg-suit monorepo",
+               "Group packages from reg-suit monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/reg-viz/reg-suit"],
+             "groupName": "reg-suit monorepo"
+           },
+           {
+             "description": [
+               "semantic-release monorepo",
+               "Group packages from semantic-release monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/semantic-release/"],
+             "groupName": "semantic-release monorepo"
+           },
+           {
+             "description": [
+               "telus-tds monorepo",
+               "Group packages from telus-tds monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/telusdigital/tds"],
+             "groupName": "telus-tds monorepo"
+           },
+           {
+             "description": [
+               "typescript-eslint monorepo",
+               "Group packages from typescript-eslint monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/typescript-eslint/typescript-eslint"
+             ],
+             "groupName": "typescript-eslint monorepo"
+           },
+           {
+             "description": [
+               "typography-js monorepo",
+               "Group packages from typography-js monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/KyleAMathews/typography.js"
+             ],
+             "groupName": "typography-js monorepo"
+           },
+           {
+             "description": [
+               "vue-cli monorepo",
+               "Group packages from vue-cli monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/vuejs/vue-cli"],
+             "groupName": "vue-cli monorepo"
+           },
+           {
+             "description": [
+               "accounts monorepo",
+               "Group packages from accounts monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/accounts-js/accounts"],
+             "groupName": "accounts monorepo"
+           },
+           {
+             "description": [
+               "angular1 monorepo",
+               "Group packages from angular1 monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/angular/angular.js"],
+             "groupName": "angular1 monorepo"
+           },
+           {
+             "description": [
+               "angular monorepo",
+               "Group packages from angular monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/angular/angular"],
+             "groupName": "angular monorepo"
+           },
+           {
+             "description": [
+               "angularcli monorepo",
+               "Group packages from angularcli monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/angular/angular-cli"],
+             "groupName": "angularcli monorepo"
+           },
+           {
+             "description": [
+               "angularfire monorepo",
+               "Group packages from angularfire monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/angular/angularfire"],
+             "groupName": "angularfire monorepo"
+           },
+           {
+             "description": [
+               "apolloclient monorepo",
+               "Group packages from apolloclient monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/apollographql/apollo-client"
+             ],
+             "groupName": "apolloclient monorepo"
+           },
+           {
+             "description": [
+               "apollolink monorepo",
+               "Group packages from apollolink monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/apollographql/apollo-link"
+             ],
+             "groupName": "apollolink monorepo"
+           },
+           {
+             "description": [
+               "awsappsync monorepo",
+               "Group packages from awsappsync monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/awslabs/aws-mobile-appsync-sdk-js"
+             ],
+             "groupName": "awsappsync monorepo"
+           },
+           {
+             "description": [
+               "babel monorepo",
+               "Group packages from babel monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/babel/babel"],
+             "groupName": "babel monorepo"
+           },
+           {
+             "description": [
+               "baset monorepo",
+               "Group packages from baset monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/igmat/baset"],
+             "groupName": "baset monorepo"
+           },
+           {
+             "description": [
+               "brave monorepo",
+               "Group packages from brave monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/openzipkin/brave"],
+             "groupName": "brave monorepo"
+           },
+           {
+             "description": [
+               "capacitor monorepo",
+               "Group packages from capacitor monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ionic-team/capacitor"],
+             "groupName": "capacitor monorepo"
+           },
+           {
+             "description": [
+               "chromely monorepo",
+               "Group packages from chromely monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/chromelyapps/Chromely"],
+             "groupName": "chromely monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^@cds/", "^@clr/"],
+             "description": ["Group packages from clarity monorepo together"],
+             "groupName": "clarity monorepo"
+           },
+           {
+             "description": [
+               "commitlint monorepo",
+               "Group packages from commitlint monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/conventional-changelog/commitlint"
+             ],
+             "groupName": "commitlint monorepo"
+           },
+           {
+             "description": [
+               "docusaurus monorepo",
+               "Group packages from docusaurus monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/facebook/docusaurus"],
+             "groupName": "docusaurus monorepo"
+           },
+           {
+             "description": [
+               "dotnet monorepo",
+               "Group packages from dotnet monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/dotnet/aspnetcore",
+               "https://github.com/dotnet/efcore",
+               "https://github.com/dotnet/extensions",
+               "https://github.com/dotnet/runtime"
+             ],
+             "groupName": "dotnet monorepo"
+           },
+           {
+             "description": [
+               "dropwizard monorepo",
+               "Group packages from dropwizard monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/dropwizard/dropwizard"],
+             "groupName": "dropwizard monorepo"
+           },
+           {
+             "description": [
+               "emotion monorepo",
+               "Group packages from emotion monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/emotion-js/emotion"],
+             "groupName": "emotion monorepo"
+           },
+           {
+             "description": [
+               "expo monorepo",
+               "Group packages from expo monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/expo/expo"],
+             "groupName": "expo monorepo"
+           },
+           {
+             "description": [
+               "feathers monorepo",
+               "Group packages from feathers monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/feathersjs/feathers"],
+             "groupName": "feathers monorepo"
+           },
+           {
+             "description": [
+               "fimbullinter monorepo",
+               "Group packages from fimbullinter monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/fimbullinter/wotan"],
+             "groupName": "fimbullinter monorepo"
+           },
+           {
+             "description": [
+               "flopflip monorepo",
+               "Group packages from flopflip monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/tdeekens/flopflip"],
+             "groupName": "flopflip monorepo"
+           },
+           {
+             "description": [
+               "formatjs monorepo",
+               "Group packages from formatjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/formatjs/formatjs"],
+             "groupName": "formatjs monorepo"
+           },
+           {
+             "description": [
+               "framework7 monorepo",
+               "Group packages from framework7 monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/framework7io/framework7"],
+             "groupName": "framework7 monorepo"
+           },
+           {
+             "description": [
+               "gatsby monorepo",
+               "Group packages from gatsby monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/gatsbyjs/gatsby"],
+             "groupName": "gatsby monorepo"
+           },
+           {
+             "description": [
+               "graphqlcodegenerator monorepo",
+               "Group packages from graphqlcodegenerator monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/dotansimha/graphql-code-generator",
+               "https://github.com/dotansimha/graphql-codegen"
+             ],
+             "groupName": "graphqlcodegenerator monorepo"
+           },
+           {
+             "description": [
+               "graphql-mesh monorepo",
+               "Group packages from graphql-mesh monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Urigo/graphql-mesh"],
+             "groupName": "graphql-mesh monorepo"
+           },
+           {
+             "description": [
+               "graphql-toolkit monorepo",
+               "Group packages from graphql-toolkit monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ardatan/graphql-toolkit"],
+             "groupName": "graphql-toolkit monorepo"
+           },
+           {
+             "description": [
+               "graphql-tools monorepo",
+               "Group packages from graphql-tools monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ardatan/graphql-tools"],
+             "groupName": "graphql-tools monorepo"
+           },
+           {
+             "description": [
+               "hamcrest monorepo",
+               "Group packages from hamcrest monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/hamcrest/JavaHamcrest"],
+             "groupName": "hamcrest monorepo"
+           },
+           {
+             "description": [
+               "Hangfire monorepo",
+               "Group packages from Hangfire monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/HangfireIO/Hangfire"],
+             "groupName": "Hangfire monorepo"
+           },
+           {
+             "description": [
+               "hapijs monorepo",
+               "Group packages from hapijs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/hapijs"],
+             "groupName": "hapijs monorepo"
+           },
+           {
+             "description": [
+               "infrastructure monorepo",
+               "Group packages from infrastructure monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/instructure/instructure-ui"
+             ],
+             "groupName": "infrastructure monorepo"
+           },
+           {
+             "description": [
+               "istanbuljs monorepo",
+               "Group packages from istanbuljs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/istanbuljs/istanbuljs"],
+             "groupName": "istanbuljs monorepo"
+           },
+           {
+             "description": [
+               "jasmine monorepo",
+               "Group packages from jasmine monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/jasmine/jasmine"],
+             "groupName": "jasmine monorepo"
+           },
+           {
+             "description": [
+               "jersey monorepo",
+               "Group packages from jersey monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/eclipse-ee4j/jersey"],
+             "groupName": "jersey monorepo"
+           },
+           {
+             "description": [
+               "jest monorepo",
+               "Group packages from jest monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/facebook/jest"],
+             "groupName": "jest monorepo"
+           },
+           {
+             "description": [
+               "junit5 monorepo",
+               "Group packages from junit5 monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/junit-team/junit5"],
+             "groupName": "junit5 monorepo"
+           },
+           {
+             "description": [
+               "lerna monorepo",
+               "Group packages from lerna monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/lerna/lerna"],
+             "groupName": "lerna monorepo"
+           },
+           {
+             "description": [
+               "lingui monorepo",
+               "Group packages from lingui monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/lingui/js-lingui"],
+             "groupName": "lingui monorepo"
+           },
+           {
+             "description": [
+               "lodash monorepo",
+               "Group packages from lodash monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/lodash/"],
+             "groupName": "lodash monorepo"
+           },
+           {
+             "description": [
+               "loopback monorepo",
+               "Group packages from loopback monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/strongloop/loopback-next"],
+             "groupName": "loopback monorepo"
+           },
+           {
+             "description": [
+               "lrnwebcomponents monorepo",
+               "Group packages from lrnwebcomponents monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/elmsln/lrnwebcomponents"],
+             "groupName": "lrnwebcomponents monorepo"
+           },
+           {
+             "description": [
+               "MassTransit monorepo",
+               "Group packages from MassTransit monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/MassTransit/MassTransit"],
+             "groupName": "MassTransit monorepo"
+           },
+           {
+             "description": [
+               "material monorepo",
+               "Group packages from material monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/material-components/material-components-web"
+             ],
+             "groupName": "material monorepo"
+           },
+           {
+             "description": [
+               "mdx monorepo",
+               "Group packages from mdx monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/mdx-js/mdx"],
+             "groupName": "mdx monorepo"
+           },
+           {
+             "description": [
+               "mui monorepo",
+               "Group packages from mui monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/mui-org/material-ui"],
+             "groupName": "mui monorepo"
+           },
+           {
+             "description": [
+               "nest monorepo",
+               "Group packages from nest monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/nestjs/nest"],
+             "groupName": "nest monorepo"
+           },
+           {
+             "description": [
+               "neutrino monorepo",
+               "Group packages from neutrino monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/neutrinojs/neutrino",
+               "https://github.com/mozilla-neutrino/neutrino-dev"
+             ],
+             "groupName": "neutrino monorepo"
+           },
+           {
+             "description": [
+               "nextjs monorepo",
+               "Group packages from nextjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/zeit/next.js",
+               "https://github.com/vercel/next.js"
+             ],
+             "groupName": "nextjs monorepo"
+           },
+           {
+             "description": [
+               "nivo monorepo",
+               "Group packages from nivo monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/plouc/nivo"],
+             "groupName": "nivo monorepo"
+           },
+           {
+             "description": [
+               "ngrx monorepo",
+               "Group packages from ngrx monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ngrx/"],
+             "groupName": "ngrx monorepo"
+           },
+           {
+             "description": [
+               "nrwl monorepo",
+               "Group packages from nrwl monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/nrwl/"],
+             "groupName": "nrwl monorepo"
+           },
+           {
+             "description": [
+               "nuxtjs monorepo",
+               "Group packages from nuxtjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/nuxt/nuxt.js"],
+             "groupName": "nuxtjs monorepo"
+           },
+           {
+             "description": [
+               "openfeign monorepo",
+               "Group packages from openfeign monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/OpenFeign/feign"],
+             "groupName": "openfeign monorepo"
+           },
+           {
+             "description": [
+               "opentelemetry monorepo",
+               "Group packages from opentelemetry monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/open-telemetry/opentelemetry-js"
+             ],
+             "groupName": "opentelemetry monorepo"
+           },
+           {
+             "description": [
+               "picasso monorepo",
+               "Group packages from picasso monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/qlik-oss/picasso.js"],
+             "groupName": "picasso monorepo"
+           },
+           {
+             "description": [
+               "pnpjs monorepo",
+               "Group packages from pnpjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/pnp/pnpjs"],
+             "groupName": "pnpjs monorepo"
+           },
+           {
+             "description": [
+               "playwright monorepo",
+               "Group packages from playwright monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Microsoft/playwright"],
+             "groupName": "playwright monorepo"
+           },
+           {
+             "description": [
+               "pollyjs monorepo",
+               "Group packages from pollyjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Netflix/pollyjs"],
+             "groupName": "pollyjs monorepo"
+           },
+           {
+             "description": [
+               "pouchdb monorepo",
+               "Group packages from pouchdb monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/pouchdb/pouchdb"],
+             "groupName": "pouchdb monorepo"
+           },
+           {
+             "description": [
+               "prisma monorepo",
+               "Group packages from prisma monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/prisma/prisma"],
+             "groupName": "prisma monorepo"
+           },
+           {
+             "description": [
+               "react monorepo",
+               "Group packages from react monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/facebook/react"],
+             "groupName": "react monorepo"
+           },
+           {
+             "description": [
+               "reactrouter monorepo",
+               "Group packages from reactrouter monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/ReactTraining/react-router"
+             ],
+             "groupName": "reactrouter monorepo"
+           },
+           {
+             "description": [
+               "reakit monorepo",
+               "Group packages from reakit monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/reakit/reakit"],
+             "groupName": "reakit monorepo"
+           },
+           {
+             "description": [
+               "redwood monorepo",
+               "Group packages from redwood monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/redwoodjs/redwood"],
+             "groupName": "redwood monorepo"
+           },
+           {
+             "description": [
+               "remark monorepo",
+               "Group packages from remark monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/remarkjs/remark"],
+             "groupName": "remark monorepo"
+           },
+           {
+             "description": [
+               "router5 monorepo",
+               "Group packages from router5 monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/router5/router5"],
+             "groupName": "router5 monorepo"
+           },
+           {
+             "description": [
+               "sentry monorepo",
+               "Group packages from sentry monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/getsentry/sentry-javascript"
+             ],
+             "groupName": "sentry monorepo"
+           },
+           {
+             "description": [
+               "springfox monorepo",
+               "Group packages from springfox monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/springfox/springfox"],
+             "groupName": "springfox monorepo"
+           },
+           {
+             "description": [
+               "sanity monorepo",
+               "Group packages from sanity monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/sanity-io/sanity"],
+             "groupName": "sanity monorepo"
+           },
+           {
+             "description": [
+               "Steeltoe monorepo",
+               "Group packages from Steeltoe monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/SteeltoeOSS/steeltoe"],
+             "groupName": "Steeltoe monorepo"
+           },
+           {
+             "description": [
+               "storybook monorepo",
+               "Group packages from storybook monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/storybookjs/storybook"],
+             "groupName": "storybook monorepo"
+           },
+           {
+             "description": [
+               "strapi monorepo",
+               "Group packages from strapi monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/strapi/strapi"],
+             "groupName": "strapi monorepo"
+           },
+           {
+             "description": [
+               "stryker monorepo",
+               "Group packages from stryker monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/stryker-mutator/stryker"],
+             "groupName": "stryker monorepo"
+           },
+           {
+             "description": [
+               "surveyjs monorepo",
+               "Group packages from surveyjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/surveyjs/surveyjs"],
+             "groupName": "surveyjs monorepo"
+           },
+           {
+             "description": [
+               "Swashbuckle monorepo",
+               "Group packages from Swashbuckle monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/domaindrivendev/Swashbuckle.AspNetCore"
+             ],
+             "groupName": "Swashbuckle monorepo"
+           },
+           {
+             "description": [
+               "treat monorepo",
+               "Group packages from treat monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/seek-oss/treat"],
+             "groupName": "treat monorepo"
+           },
+           {
+             "description": [
+               "typefaces monorepo",
+               "Group packages from typefaces monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/KyleAMathews/typefaces"],
+             "groupName": "typefaces monorepo"
+           },
+           {
+             "description": [
+               "uppy monorepo",
+               "Group packages from uppy monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/transloadit/uppy"],
+             "groupName": "uppy monorepo"
+           },
+           {
+             "description": [
+               "vue monorepo",
+               "Group packages from vue monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/vuejs/vue"],
+             "groupName": "vue monorepo"
+           },
+           {
+             "description": [
+               "vuepress monorepo",
+               "Group packages from vuepress monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/vuejs/vuepress"],
+             "groupName": "vuepress monorepo"
+           },
+           {
+             "description": [
+               "webdriverio monorepo",
+               "Group packages from webdriverio monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/webdriverio/webdriverio"],
+             "groupName": "webdriverio monorepo"
+           },
+           {
+             "description": [
+               "workbox monorepo",
+               "Group packages from workbox monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/googlechrome/workbox"],
+             "groupName": "workbox monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^babel6$"],
+             "description": ["Group packages from babel6 monorepo together"],
+             "groupName": "babel6 monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^@wordpress/"],
+             "description": ["Group packages from wordpress monorepo together"],
+             "groupName": "wordpress monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^@angular/material", "^@angular/cdk"],
+             "description": ["Group packages from angularmaterial monorepo together"],
+             "groupName": "angularmaterial monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^com.amazonaws:aws-java-sdk-"],
+             "description": ["Group packages from aws-java-sdk monorepo together"],
+             "groupName": "aws-java-sdk monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^@embroider/"],
+             "description": ["Group packages from embroider monorepo together"],
+             "groupName": "embroider monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^@fullcalendar/"],
+             "description": ["Group packages from fullcalendar monorepo together"],
+             "groupName": "fullcalendar monorepo"
+           },
+           {
+             "description": ["All packages published by Apollo GraphQL"],
+             "matchSourceUrlPrefixes": ["https://github.com/apollographql/"],
+             "groupName": "Apollo GraphQL packages"
+           },
+           {"groupName": "Font Awesome", "matchPackagePatterns": ["^@fortawesome/"]},
+           {
+             "groupName": "Glimmer.js packages",
+             "groupSlug": "glimmer",
+             "matchPackageNames": ["@glimmer/component", "@glimmer/tracking"]
+           },
+           {
+             "matchDatasources": ["go"],
+             "groupName": "go-openapi packages",
+             "groupSlug": "go-openapi",
+             "matchPackagePatterns": ["^github.com/go-openapi/"]
+           },
+           {
+             "matchPackagePatterns": ["^org.hibernate:"],
+             "groupName": "hibernate core"
+           },
+           {
+             "matchPackagePatterns": ["^org.hibernate.validator:"],
+             "groupName": "hibernate validator"
+           },
+           {
+             "matchPackagePatterns": ["^org.hibernate.ogm:"],
+             "groupName": "hibernate ogm"
+           },
+           {
+             "matchPackagePatterns": ["^org.hibernate.common:"],
+             "groupName": "hibernate commons"
+           },
+           {
+             "matchPackagePatterns": ["^illuminate/"],
+             "groupName": "illuminate packages",
+             "groupSlug": "illuminate"
+           },
+           {
+             "matchSourceUrlPrefixes": [
+               "https://github.com/jekyll/",
+               "https://github.com/github/pages-gem"
+             ],
+             "groupName": "jekyll ecosystem packages"
+           },
+           {"groupName": "polymer packages", "matchPackagePatterns": ["^@polymer/"]},
+           {
+             "matchPackagePatterns": ["^io.github.resilience4j:"],
+             "groupName": "resilience4j"
+           },
+           {
+             "matchDatasources": ["rubygems"],
+             "matchPackagePatterns": ["^omniauth"],
+             "groupName": "omniauth packages"
+           },
+           {"groupName": "socket.io packages", "matchPackagePatterns": ["^socket.io"]},
+           {
+             "groupName": "spring amqp",
+             "matchPackagePatterns": ["^org.springframework.amqp:"]
+           },
+           {
+             "groupName": "spring android",
+             "matchPackagePatterns": ["^org.springframework.android:"]
+           },
+           {
+             "groupName": "spring batch",
+             "matchPackagePatterns": ["^org.springframework.batch:"]
+           },
+           {
+             "groupName": "spring boot",
+             "matchPackagePatterns": ["^org.springframework.boot:"]
+           },
+           {
+             "groupName": "spring cloud",
+             "matchPackagePatterns": ["^org.springframework.cloud:"]
+           },
+           {
+             "groupName": "spring core",
+             "matchPackagePatterns": ["^org.springframework:"]
+           },
+           {
+             "groupName": "spring data",
+             "matchPackagePatterns": ["^org.springframework.data:"]
+           },
+           {
+             "groupName": "spring hateoas",
+             "matchPackagePatterns": ["^org.springframework.hateoas:"]
+           },
+           {
+             "groupName": "spring integration",
+             "matchPackagePatterns": ["^org.springframework.integration:"]
+           },
+           {
+             "groupName": "spring kafka",
+             "matchPackagePatterns": ["^org.springframework.kafka:"]
+           },
+           {
+             "groupName": "spring ldap",
+             "matchPackagePatterns": ["^org.springframework.ldap:"]
+           },
+           {
+             "groupName": "spring mobile",
+             "matchPackagePatterns": ["^org.springframework.mobile:"]
+           },
+           {
+             "groupName": "spring osgi",
+             "matchPackagePatterns": ["^org.springframework.osgi:"]
+           },
+           {
+             "groupName": "spring restdocs",
+             "matchPackagePatterns": ["^org.springframework.restdocs:"]
+           },
+           {
+             "groupName": "spring roo",
+             "matchPackagePatterns": ["^org.springframework.roo:"]
+           },
+           {
+             "groupName": "spring scala",
+             "matchPackagePatterns": ["^org.springframework.scala:"]
+           },
+           {
+             "groupName": "spring security",
+             "matchPackagePatterns": ["^org.springframework.security:"]
+           },
+           {
+             "groupName": "spring session",
+             "matchPackagePatterns": ["^org.springframework.session:"]
+           },
+           {
+             "groupName": "spring shell",
+             "matchPackagePatterns": ["^org.springframework.shell:"]
+           },
+           {
+             "groupName": "spring social",
+             "matchPackagePatterns": ["^org.springframework.social:"]
+           },
+           {
+             "groupName": "spring statemachine",
+             "matchPackagePatterns": ["^org.springframework.statemachine:"]
+           },
+           {
+             "groupName": "spring webflow",
+             "matchPackagePatterns": ["^org.springframework.webflow:"]
+           },
+           {
+             "groupName": "spring ws",
+             "matchPackagePatterns": ["^org.springframework.ws:"]
+           },
+           {
+             "matchPackagePatterns": ["^symfony/"],
+             "groupName": "symfony packages",
+             "groupSlug": "symfony"
+           },
+           {
+             "matchPackageNames": ["@types/node"],
+             "matchUpdateTypes": ["major"],
+             "enabled": false
+           },
+           {
+             "matchDatasources": ["maven", "sbt-package"],
+             "matchPackagePatterns": ["^commons-"],
+             "allowedVersions": "!/^200\\d{5}(\\.\\d+)?/"
+           },
+           {
+             "matchDatasources": ["maven"],
+             "matchPackageNames": [
+               "org.springframework.cloud:spring-cloud-starter-parent"
+             ],
+             "allowedVersions": "/^[A-Z]/"
+           },
+           {
+             "matchManagers": ["sbt"],
+             "matchPackagePatterns": ["^org\\.http4s:"],
+             "allowedVersions": "!/^1\\.0-\\d+-[a-fA-F0-9]{7}$/"
+           },
+           {
+             "matchDepTypes": ["require", "dependencies", "peerDependencies"],
+             "semanticCommitType": "perf"
+           },
+           {
+             "matchDepTypes": [
+               "devDependencies",
+               "peerDevDependencies",
+               "require-dev"
+             ],
+             "rangeStrategy": "replace"
+           }
+         ],
+         "ignoreDeps": [],
+         "matchPackageNames": [
+           "fusion-cli",
+           "fusion-core",
+           "fusion-test-utils",
+           "fusion-tokens"
+         ],
+         "matchPackagePatterns": [
+           "^fusion-plugin-*",
+           "^fusion-react*",
+           "^fusion-apollo*"
+         ],
+         "minor": {"automerge": true},
+         "patch": {"automerge": true},
+         "pin": {"automerge": true},
+         "lockFileMaintenance": {
+           "automerge": true,
+           "enabled": true,
+           "commitMessageAction": "update lock file",
+           "schedule": ["before 5am"],
+           "groupName": "lock"
+         },
+         "semanticCommits": "enabled",
+         "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+         "semanticCommitType": "chore",
+         "semanticCommitScope": "deps",
+         "timezone": "UTC",
+         "baseBranches": ["example"]
+       }
+DEBUG: CLI config
+       "config": {
+         "repositories": ["ph-fritsche/renovate-config"],
+         "dryRun": true,
+         "token": "***********"
+       }
+DEBUG: Env config
+       "config": {"hostRules": []}
+DEBUG: Combined config
+       "config": {
+         "description": [
+           "Separate major versions of dependencies into individual branches/PRs",
+           "Do not separate patch and minor upgrades into separate PRs for the same dependency",
+           "Upgrade to unstable versions only if the existing version is unstable",
+           "Raise PRs immediately (after branch is created)",
+           "Keep existing branches updated even when not scheduled",
+           "Disable automerging feature - wait for humans to merge all PRs",
+           "Ignore `node_modules`, `bower_components`, `vendor` and various test/tests directories",
+           "Autodetect whether to pin dependencies or maintain ranges",
+           "Rate limit PR creation to a maximum of two per hour",
+           "Limit to maximum 20 open PRs at any time",
+           "Group known monorepo packages together",
+           "Use curated list of recommended non-monorepo package groupings",
+           "Ignore spring cloud 1.x releases",
+           "Ignore http4s digest-based 1.x milestones",
+           "Automerge patch and minor upgrades if they pass tests",
+           "Use semantic prefixes for commit messages and PR titles"
+         ],
+         "separateMajorMinor": true,
+         "separateMinorPatch": false,
+         "ignoreUnstable": true,
+         "prCreation": "immediate",
+         "updateNotScheduled": true,
+         "automerge": false,
+         "ignorePaths": [
+           "**/node_modules/**",
+           "**/bower_components/**",
+           "**/vendor/**",
+           "**/examples/**",
+           "**/__tests__/**",
+           "**/test/**",
+           "**/tests/**",
+           "**/__fixtures__/**"
+         ],
+         "rangeStrategy": "widen",
+         "prHourlyLimit": 2,
+         "prConcurrentLimit": 20,
+         "packageRules": [
+           {
+             "description": [
+               "ag-grid monorepo",
+               "Group packages from ag-grid monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ag-grid/ag-grid"],
+             "groupName": "ag-grid monorepo"
+           },
+           {
+             "description": [
+               "arcus event-grid monorepo",
+               "Group packages from arcus event-grid monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/arcus-azure/arcus.eventgrid"
+             ],
+             "groupName": "arcus event-grid monorepo"
+           },
+           {
+             "description": [
+               "arcus security monorepo",
+               "Group packages from arcus security monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/arcus-azure/arcus.security"
+             ],
+             "groupName": "arcus security monorepo"
+           },
+           {
+             "description": [
+               "arcus messaging monorepo",
+               "Group packages from arcus messaging monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/arcus-azure/arcus.messaging"
+             ],
+             "groupName": "arcus messaging monorepo"
+           },
+           {
+             "description": [
+               "arcus observability monorepo",
+               "Group packages from arcus observability monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/arcus-azure/arcus.observability"
+             ],
+             "groupName": "arcus observability monorepo"
+           },
+           {
+             "description": [
+               "arcus webapi monorepo",
+               "Group packages from arcus webapi monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/arcus-azure/arcus.webapi"],
+             "groupName": "arcus webapi monorepo"
+           },
+           {
+             "description": [
+               "arcus background-jobs monorepo",
+               "Group packages from arcus background-jobs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/arcus-azure/arcus.backgroundjobs"
+             ],
+             "groupName": "arcus background-jobs monorepo"
+           },
+           {
+             "description": [
+               "algolia-react-instantsearch monorepo",
+               "Group packages from algolia-react-instantsearch monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/algolia/react-instantsearch"
+             ],
+             "groupName": "algolia-react-instantsearch monorepo"
+           },
+           {
+             "description": [
+               "angular-eslint monorepo",
+               "Group packages from angular-eslint monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/angular-eslint/angular-eslint"
+             ],
+             "groupName": "angular-eslint monorepo"
+           },
+           {
+             "description": [
+               "apollo-server monorepo",
+               "Group packages from apollo-server monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/apollographql/apollo-server"
+             ],
+             "groupName": "apollo-server monorepo"
+           },
+           {
+             "description": [
+               "aspnet-api-versioning monorepo",
+               "Group packages from aspnet-api-versioning monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/Microsoft/aspnet-api-versioning"
+             ],
+             "groupName": "aspnet-api-versioning monorepo"
+           },
+           {
+             "description": [
+               "aspnet AspNetWebStack monorepo",
+               "Group packages from aspnet AspNetWebStack monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/aspnet/AspNetWebStack"],
+             "groupName": "aspnet AspNetWebStack monorepo"
+           },
+           {
+             "description": [
+               "aspnet Extensions monorepo",
+               "Group packages from aspnet Extensions monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/aspnet/Extensions"],
+             "groupName": "aspnet Extensions monorepo"
+           },
+           {
+             "description": [
+               "aws-cdk monorepo",
+               "Group packages from aws-cdk monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/aws/aws-cdk"],
+             "groupName": "aws-cdk monorepo"
+           },
+           {
+             "description": [
+               "aws-sdk-js-v3 monorepo",
+               "Group packages from aws-sdk-js-v3 monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/aws/aws-sdk-js-v3"],
+             "groupName": "aws-sdk-js-v3 monorepo"
+           },
+           {
+             "description": [
+               "azure azure-libraries-for-net monorepo",
+               "Group packages from azure azure-libraries-for-net monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/Azure/azure-libraries-for-net"
+             ],
+             "groupName": "azure azure-libraries-for-net monorepo"
+           },
+           {
+             "description": [
+               "azure azure-sdk-for-net monorepo",
+               "Group packages from azure azure-sdk-for-net monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Azure/azure-sdk-for-net"],
+             "groupName": "azure azure-sdk-for-net monorepo"
+           },
+           {
+             "description": [
+               "azure azure-storage-net monorepo",
+               "Group packages from azure azure-storage-net monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Azure/azure-storage-net"],
+             "groupName": "azure azure-storage-net monorepo"
+           },
+           {
+             "description": [
+               "bugsnag-js monorepo",
+               "Group packages from bugsnag-js monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/bugsnag/bugsnag-js"],
+             "groupName": "bugsnag-js monorepo"
+           },
+           {
+             "description": [
+               "date-io monorepo",
+               "Group packages from date-io monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/dmtrKovalenko/date-io"],
+             "groupName": "date-io monorepo"
+           },
+           {
+             "description": [
+               "devextreme-reactive monorepo",
+               "Group packages from devextreme-reactive monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/DevExpress/devextreme-reactive"
+             ],
+             "groupName": "devextreme-reactive monorepo"
+           },
+           {
+             "description": [
+               "electron-forge monorepo",
+               "Group packages from electron-forge monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/electron-userland/electron-forge"
+             ],
+             "groupName": "electron-forge monorepo"
+           },
+           {
+             "description": [
+               "feathers-databases monorepo",
+               "Group packages from feathers-databases monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/feathersjs/databases"],
+             "groupName": "feathers-databases monorepo"
+           },
+           {
+             "description": [
+               "ember-decorators monorepo",
+               "Group packages from ember-decorators monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/ember-decorators/ember-decorators"
+             ],
+             "groupName": "ember-decorators monorepo"
+           },
+           {
+             "description": [
+               "graphql-modules monorepo",
+               "Group packages from graphql-modules monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Urigo/graphql-modules"],
+             "groupName": "graphql-modules monorepo"
+           },
+           {
+             "description": [
+               "ionic-native monorepo",
+               "Group packages from ionic-native monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ionic-team/ionic-native"],
+             "groupName": "ionic-native monorepo"
+           },
+           {
+             "description": [
+               "mdc-react monorepo",
+               "Group packages from mdc-react monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "material-components/material-components-web-react"
+             ],
+             "groupName": "mdc-react monorepo"
+           },
+           {
+             "description": [
+               "ngx-formly monorepo",
+               "Group packages from ngx-formly monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ngx-formly/ngx-formly"],
+             "groupName": "ngx-formly monorepo"
+           },
+           {
+             "description": [
+               "ngxs-store monorepo",
+               "Group packages from ngxs-store monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ngxs/store"],
+             "groupName": "ngxs-store monorepo"
+           },
+           {
+             "description": [
+               "reach-ui monorepo",
+               "Group packages from reach-ui monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/reach/reach-ui"],
+             "groupName": "reach-ui monorepo"
+           },
+           {
+             "description": [
+               "react-apollo monorepo",
+               "Group packages from react-apollo monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/apollographql/react-apollo"
+             ],
+             "groupName": "react-apollo monorepo"
+           },
+           {
+             "description": [
+               "react-dnd monorepo",
+               "Group packages from react-dnd monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/react-dnd/react-dnd"],
+             "groupName": "react-dnd monorepo"
+           },
+           {
+             "description": [
+               "react-navigation monorepo",
+               "Group packages from react-navigation monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/react-navigation/react-navigation"
+             ],
+             "groupName": "react-navigation monorepo"
+           },
+           {
+             "description": [
+               "reactivestack-cookies monorepo",
+               "Group packages from reactivestack-cookies monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/reactivestack/cookies"],
+             "groupName": "reactivestack-cookies monorepo"
+           },
+           {
+             "description": [
+               "reg-suit monorepo",
+               "Group packages from reg-suit monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/reg-viz/reg-suit"],
+             "groupName": "reg-suit monorepo"
+           },
+           {
+             "description": [
+               "semantic-release monorepo",
+               "Group packages from semantic-release monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/semantic-release/"],
+             "groupName": "semantic-release monorepo"
+           },
+           {
+             "description": [
+               "telus-tds monorepo",
+               "Group packages from telus-tds monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/telusdigital/tds"],
+             "groupName": "telus-tds monorepo"
+           },
+           {
+             "description": [
+               "typescript-eslint monorepo",
+               "Group packages from typescript-eslint monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/typescript-eslint/typescript-eslint"
+             ],
+             "groupName": "typescript-eslint monorepo"
+           },
+           {
+             "description": [
+               "typography-js monorepo",
+               "Group packages from typography-js monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/KyleAMathews/typography.js"
+             ],
+             "groupName": "typography-js monorepo"
+           },
+           {
+             "description": [
+               "vue-cli monorepo",
+               "Group packages from vue-cli monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/vuejs/vue-cli"],
+             "groupName": "vue-cli monorepo"
+           },
+           {
+             "description": [
+               "accounts monorepo",
+               "Group packages from accounts monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/accounts-js/accounts"],
+             "groupName": "accounts monorepo"
+           },
+           {
+             "description": [
+               "angular1 monorepo",
+               "Group packages from angular1 monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/angular/angular.js"],
+             "groupName": "angular1 monorepo"
+           },
+           {
+             "description": [
+               "angular monorepo",
+               "Group packages from angular monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/angular/angular"],
+             "groupName": "angular monorepo"
+           },
+           {
+             "description": [
+               "angularcli monorepo",
+               "Group packages from angularcli monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/angular/angular-cli"],
+             "groupName": "angularcli monorepo"
+           },
+           {
+             "description": [
+               "angularfire monorepo",
+               "Group packages from angularfire monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/angular/angularfire"],
+             "groupName": "angularfire monorepo"
+           },
+           {
+             "description": [
+               "apolloclient monorepo",
+               "Group packages from apolloclient monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/apollographql/apollo-client"
+             ],
+             "groupName": "apolloclient monorepo"
+           },
+           {
+             "description": [
+               "apollolink monorepo",
+               "Group packages from apollolink monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/apollographql/apollo-link"
+             ],
+             "groupName": "apollolink monorepo"
+           },
+           {
+             "description": [
+               "awsappsync monorepo",
+               "Group packages from awsappsync monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/awslabs/aws-mobile-appsync-sdk-js"
+             ],
+             "groupName": "awsappsync monorepo"
+           },
+           {
+             "description": [
+               "babel monorepo",
+               "Group packages from babel monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/babel/babel"],
+             "groupName": "babel monorepo"
+           },
+           {
+             "description": [
+               "baset monorepo",
+               "Group packages from baset monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/igmat/baset"],
+             "groupName": "baset monorepo"
+           },
+           {
+             "description": [
+               "brave monorepo",
+               "Group packages from brave monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/openzipkin/brave"],
+             "groupName": "brave monorepo"
+           },
+           {
+             "description": [
+               "capacitor monorepo",
+               "Group packages from capacitor monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ionic-team/capacitor"],
+             "groupName": "capacitor monorepo"
+           },
+           {
+             "description": [
+               "chromely monorepo",
+               "Group packages from chromely monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/chromelyapps/Chromely"],
+             "groupName": "chromely monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^@cds/", "^@clr/"],
+             "description": ["Group packages from clarity monorepo together"],
+             "groupName": "clarity monorepo"
+           },
+           {
+             "description": [
+               "commitlint monorepo",
+               "Group packages from commitlint monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/conventional-changelog/commitlint"
+             ],
+             "groupName": "commitlint monorepo"
+           },
+           {
+             "description": [
+               "docusaurus monorepo",
+               "Group packages from docusaurus monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/facebook/docusaurus"],
+             "groupName": "docusaurus monorepo"
+           },
+           {
+             "description": [
+               "dotnet monorepo",
+               "Group packages from dotnet monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/dotnet/aspnetcore",
+               "https://github.com/dotnet/efcore",
+               "https://github.com/dotnet/extensions",
+               "https://github.com/dotnet/runtime"
+             ],
+             "groupName": "dotnet monorepo"
+           },
+           {
+             "description": [
+               "dropwizard monorepo",
+               "Group packages from dropwizard monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/dropwizard/dropwizard"],
+             "groupName": "dropwizard monorepo"
+           },
+           {
+             "description": [
+               "emotion monorepo",
+               "Group packages from emotion monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/emotion-js/emotion"],
+             "groupName": "emotion monorepo"
+           },
+           {
+             "description": [
+               "expo monorepo",
+               "Group packages from expo monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/expo/expo"],
+             "groupName": "expo monorepo"
+           },
+           {
+             "description": [
+               "feathers monorepo",
+               "Group packages from feathers monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/feathersjs/feathers"],
+             "groupName": "feathers monorepo"
+           },
+           {
+             "description": [
+               "fimbullinter monorepo",
+               "Group packages from fimbullinter monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/fimbullinter/wotan"],
+             "groupName": "fimbullinter monorepo"
+           },
+           {
+             "description": [
+               "flopflip monorepo",
+               "Group packages from flopflip monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/tdeekens/flopflip"],
+             "groupName": "flopflip monorepo"
+           },
+           {
+             "description": [
+               "formatjs monorepo",
+               "Group packages from formatjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/formatjs/formatjs"],
+             "groupName": "formatjs monorepo"
+           },
+           {
+             "description": [
+               "framework7 monorepo",
+               "Group packages from framework7 monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/framework7io/framework7"],
+             "groupName": "framework7 monorepo"
+           },
+           {
+             "description": [
+               "gatsby monorepo",
+               "Group packages from gatsby monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/gatsbyjs/gatsby"],
+             "groupName": "gatsby monorepo"
+           },
+           {
+             "description": [
+               "graphqlcodegenerator monorepo",
+               "Group packages from graphqlcodegenerator monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/dotansimha/graphql-code-generator",
+               "https://github.com/dotansimha/graphql-codegen"
+             ],
+             "groupName": "graphqlcodegenerator monorepo"
+           },
+           {
+             "description": [
+               "graphql-mesh monorepo",
+               "Group packages from graphql-mesh monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Urigo/graphql-mesh"],
+             "groupName": "graphql-mesh monorepo"
+           },
+           {
+             "description": [
+               "graphql-toolkit monorepo",
+               "Group packages from graphql-toolkit monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ardatan/graphql-toolkit"],
+             "groupName": "graphql-toolkit monorepo"
+           },
+           {
+             "description": [
+               "graphql-tools monorepo",
+               "Group packages from graphql-tools monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ardatan/graphql-tools"],
+             "groupName": "graphql-tools monorepo"
+           },
+           {
+             "description": [
+               "hamcrest monorepo",
+               "Group packages from hamcrest monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/hamcrest/JavaHamcrest"],
+             "groupName": "hamcrest monorepo"
+           },
+           {
+             "description": [
+               "Hangfire monorepo",
+               "Group packages from Hangfire monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/HangfireIO/Hangfire"],
+             "groupName": "Hangfire monorepo"
+           },
+           {
+             "description": [
+               "hapijs monorepo",
+               "Group packages from hapijs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/hapijs"],
+             "groupName": "hapijs monorepo"
+           },
+           {
+             "description": [
+               "infrastructure monorepo",
+               "Group packages from infrastructure monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/instructure/instructure-ui"
+             ],
+             "groupName": "infrastructure monorepo"
+           },
+           {
+             "description": [
+               "istanbuljs monorepo",
+               "Group packages from istanbuljs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/istanbuljs/istanbuljs"],
+             "groupName": "istanbuljs monorepo"
+           },
+           {
+             "description": [
+               "jasmine monorepo",
+               "Group packages from jasmine monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/jasmine/jasmine"],
+             "groupName": "jasmine monorepo"
+           },
+           {
+             "description": [
+               "jersey monorepo",
+               "Group packages from jersey monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/eclipse-ee4j/jersey"],
+             "groupName": "jersey monorepo"
+           },
+           {
+             "description": [
+               "jest monorepo",
+               "Group packages from jest monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/facebook/jest"],
+             "groupName": "jest monorepo"
+           },
+           {
+             "description": [
+               "junit5 monorepo",
+               "Group packages from junit5 monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/junit-team/junit5"],
+             "groupName": "junit5 monorepo"
+           },
+           {
+             "description": [
+               "lerna monorepo",
+               "Group packages from lerna monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/lerna/lerna"],
+             "groupName": "lerna monorepo"
+           },
+           {
+             "description": [
+               "lingui monorepo",
+               "Group packages from lingui monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/lingui/js-lingui"],
+             "groupName": "lingui monorepo"
+           },
+           {
+             "description": [
+               "lodash monorepo",
+               "Group packages from lodash monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/lodash/"],
+             "groupName": "lodash monorepo"
+           },
+           {
+             "description": [
+               "loopback monorepo",
+               "Group packages from loopback monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/strongloop/loopback-next"],
+             "groupName": "loopback monorepo"
+           },
+           {
+             "description": [
+               "lrnwebcomponents monorepo",
+               "Group packages from lrnwebcomponents monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/elmsln/lrnwebcomponents"],
+             "groupName": "lrnwebcomponents monorepo"
+           },
+           {
+             "description": [
+               "MassTransit monorepo",
+               "Group packages from MassTransit monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/MassTransit/MassTransit"],
+             "groupName": "MassTransit monorepo"
+           },
+           {
+             "description": [
+               "material monorepo",
+               "Group packages from material monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/material-components/material-components-web"
+             ],
+             "groupName": "material monorepo"
+           },
+           {
+             "description": [
+               "mdx monorepo",
+               "Group packages from mdx monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/mdx-js/mdx"],
+             "groupName": "mdx monorepo"
+           },
+           {
+             "description": [
+               "mui monorepo",
+               "Group packages from mui monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/mui-org/material-ui"],
+             "groupName": "mui monorepo"
+           },
+           {
+             "description": [
+               "nest monorepo",
+               "Group packages from nest monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/nestjs/nest"],
+             "groupName": "nest monorepo"
+           },
+           {
+             "description": [
+               "neutrino monorepo",
+               "Group packages from neutrino monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/neutrinojs/neutrino",
+               "https://github.com/mozilla-neutrino/neutrino-dev"
+             ],
+             "groupName": "neutrino monorepo"
+           },
+           {
+             "description": [
+               "nextjs monorepo",
+               "Group packages from nextjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/zeit/next.js",
+               "https://github.com/vercel/next.js"
+             ],
+             "groupName": "nextjs monorepo"
+           },
+           {
+             "description": [
+               "nivo monorepo",
+               "Group packages from nivo monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/plouc/nivo"],
+             "groupName": "nivo monorepo"
+           },
+           {
+             "description": [
+               "ngrx monorepo",
+               "Group packages from ngrx monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/ngrx/"],
+             "groupName": "ngrx monorepo"
+           },
+           {
+             "description": [
+               "nrwl monorepo",
+               "Group packages from nrwl monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/nrwl/"],
+             "groupName": "nrwl monorepo"
+           },
+           {
+             "description": [
+               "nuxtjs monorepo",
+               "Group packages from nuxtjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/nuxt/nuxt.js"],
+             "groupName": "nuxtjs monorepo"
+           },
+           {
+             "description": [
+               "openfeign monorepo",
+               "Group packages from openfeign monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/OpenFeign/feign"],
+             "groupName": "openfeign monorepo"
+           },
+           {
+             "description": [
+               "opentelemetry monorepo",
+               "Group packages from opentelemetry monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/open-telemetry/opentelemetry-js"
+             ],
+             "groupName": "opentelemetry monorepo"
+           },
+           {
+             "description": [
+               "picasso monorepo",
+               "Group packages from picasso monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/qlik-oss/picasso.js"],
+             "groupName": "picasso monorepo"
+           },
+           {
+             "description": [
+               "pnpjs monorepo",
+               "Group packages from pnpjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/pnp/pnpjs"],
+             "groupName": "pnpjs monorepo"
+           },
+           {
+             "description": [
+               "playwright monorepo",
+               "Group packages from playwright monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Microsoft/playwright"],
+             "groupName": "playwright monorepo"
+           },
+           {
+             "description": [
+               "pollyjs monorepo",
+               "Group packages from pollyjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/Netflix/pollyjs"],
+             "groupName": "pollyjs monorepo"
+           },
+           {
+             "description": [
+               "pouchdb monorepo",
+               "Group packages from pouchdb monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/pouchdb/pouchdb"],
+             "groupName": "pouchdb monorepo"
+           },
+           {
+             "description": [
+               "prisma monorepo",
+               "Group packages from prisma monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/prisma/prisma"],
+             "groupName": "prisma monorepo"
+           },
+           {
+             "description": [
+               "react monorepo",
+               "Group packages from react monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/facebook/react"],
+             "groupName": "react monorepo"
+           },
+           {
+             "description": [
+               "reactrouter monorepo",
+               "Group packages from reactrouter monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/ReactTraining/react-router"
+             ],
+             "groupName": "reactrouter monorepo"
+           },
+           {
+             "description": [
+               "reakit monorepo",
+               "Group packages from reakit monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/reakit/reakit"],
+             "groupName": "reakit monorepo"
+           },
+           {
+             "description": [
+               "redwood monorepo",
+               "Group packages from redwood monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/redwoodjs/redwood"],
+             "groupName": "redwood monorepo"
+           },
+           {
+             "description": [
+               "remark monorepo",
+               "Group packages from remark monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/remarkjs/remark"],
+             "groupName": "remark monorepo"
+           },
+           {
+             "description": [
+               "router5 monorepo",
+               "Group packages from router5 monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/router5/router5"],
+             "groupName": "router5 monorepo"
+           },
+           {
+             "description": [
+               "sentry monorepo",
+               "Group packages from sentry monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/getsentry/sentry-javascript"
+             ],
+             "groupName": "sentry monorepo"
+           },
+           {
+             "description": [
+               "springfox monorepo",
+               "Group packages from springfox monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/springfox/springfox"],
+             "groupName": "springfox monorepo"
+           },
+           {
+             "description": [
+               "sanity monorepo",
+               "Group packages from sanity monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/sanity-io/sanity"],
+             "groupName": "sanity monorepo"
+           },
+           {
+             "description": [
+               "Steeltoe monorepo",
+               "Group packages from Steeltoe monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/SteeltoeOSS/steeltoe"],
+             "groupName": "Steeltoe monorepo"
+           },
+           {
+             "description": [
+               "storybook monorepo",
+               "Group packages from storybook monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/storybookjs/storybook"],
+             "groupName": "storybook monorepo"
+           },
+           {
+             "description": [
+               "strapi monorepo",
+               "Group packages from strapi monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/strapi/strapi"],
+             "groupName": "strapi monorepo"
+           },
+           {
+             "description": [
+               "stryker monorepo",
+               "Group packages from stryker monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/stryker-mutator/stryker"],
+             "groupName": "stryker monorepo"
+           },
+           {
+             "description": [
+               "surveyjs monorepo",
+               "Group packages from surveyjs monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/surveyjs/surveyjs"],
+             "groupName": "surveyjs monorepo"
+           },
+           {
+             "description": [
+               "Swashbuckle monorepo",
+               "Group packages from Swashbuckle monorepo together"
+             ],
+             "matchSourceUrlPrefixes": [
+               "https://github.com/domaindrivendev/Swashbuckle.AspNetCore"
+             ],
+             "groupName": "Swashbuckle monorepo"
+           },
+           {
+             "description": [
+               "treat monorepo",
+               "Group packages from treat monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/seek-oss/treat"],
+             "groupName": "treat monorepo"
+           },
+           {
+             "description": [
+               "typefaces monorepo",
+               "Group packages from typefaces monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/KyleAMathews/typefaces"],
+             "groupName": "typefaces monorepo"
+           },
+           {
+             "description": [
+               "uppy monorepo",
+               "Group packages from uppy monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/transloadit/uppy"],
+             "groupName": "uppy monorepo"
+           },
+           {
+             "description": [
+               "vue monorepo",
+               "Group packages from vue monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/vuejs/vue"],
+             "groupName": "vue monorepo"
+           },
+           {
+             "description": [
+               "vuepress monorepo",
+               "Group packages from vuepress monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/vuejs/vuepress"],
+             "groupName": "vuepress monorepo"
+           },
+           {
+             "description": [
+               "webdriverio monorepo",
+               "Group packages from webdriverio monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/webdriverio/webdriverio"],
+             "groupName": "webdriverio monorepo"
+           },
+           {
+             "description": [
+               "workbox monorepo",
+               "Group packages from workbox monorepo together"
+             ],
+             "matchSourceUrlPrefixes": ["https://github.com/googlechrome/workbox"],
+             "groupName": "workbox monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^babel6$"],
+             "description": ["Group packages from babel6 monorepo together"],
+             "groupName": "babel6 monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^@wordpress/"],
+             "description": ["Group packages from wordpress monorepo together"],
+             "groupName": "wordpress monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^@angular/material", "^@angular/cdk"],
+             "description": ["Group packages from angularmaterial monorepo together"],
+             "groupName": "angularmaterial monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^com.amazonaws:aws-java-sdk-"],
+             "description": ["Group packages from aws-java-sdk monorepo together"],
+             "groupName": "aws-java-sdk monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^@embroider/"],
+             "description": ["Group packages from embroider monorepo together"],
+             "groupName": "embroider monorepo"
+           },
+           {
+             "matchPackagePatterns": ["^@fullcalendar/"],
+             "description": ["Group packages from fullcalendar monorepo together"],
+             "groupName": "fullcalendar monorepo"
+           },
+           {
+             "description": ["All packages published by Apollo GraphQL"],
+             "matchSourceUrlPrefixes": ["https://github.com/apollographql/"],
+             "groupName": "Apollo GraphQL packages"
+           },
+           {"groupName": "Font Awesome", "matchPackagePatterns": ["^@fortawesome/"]},
+           {
+             "groupName": "Glimmer.js packages",
+             "groupSlug": "glimmer",
+             "matchPackageNames": ["@glimmer/component", "@glimmer/tracking"]
+           },
+           {
+             "matchDatasources": ["go"],
+             "groupName": "go-openapi packages",
+             "groupSlug": "go-openapi",
+             "matchPackagePatterns": ["^github.com/go-openapi/"]
+           },
+           {
+             "matchPackagePatterns": ["^org.hibernate:"],
+             "groupName": "hibernate core"
+           },
+           {
+             "matchPackagePatterns": ["^org.hibernate.validator:"],
+             "groupName": "hibernate validator"
+           },
+           {
+             "matchPackagePatterns": ["^org.hibernate.ogm:"],
+             "groupName": "hibernate ogm"
+           },
+           {
+             "matchPackagePatterns": ["^org.hibernate.common:"],
+             "groupName": "hibernate commons"
+           },
+           {
+             "matchPackagePatterns": ["^illuminate/"],
+             "groupName": "illuminate packages",
+             "groupSlug": "illuminate"
+           },
+           {
+             "matchSourceUrlPrefixes": [
+               "https://github.com/jekyll/",
+               "https://github.com/github/pages-gem"
+             ],
+             "groupName": "jekyll ecosystem packages"
+           },
+           {"groupName": "polymer packages", "matchPackagePatterns": ["^@polymer/"]},
+           {
+             "matchPackagePatterns": ["^io.github.resilience4j:"],
+             "groupName": "resilience4j"
+           },
+           {
+             "matchDatasources": ["rubygems"],
+             "matchPackagePatterns": ["^omniauth"],
+             "groupName": "omniauth packages"
+           },
+           {"groupName": "socket.io packages", "matchPackagePatterns": ["^socket.io"]},
+           {
+             "groupName": "spring amqp",
+             "matchPackagePatterns": ["^org.springframework.amqp:"]
+           },
+           {
+             "groupName": "spring android",
+             "matchPackagePatterns": ["^org.springframework.android:"]
+           },
+           {
+             "groupName": "spring batch",
+             "matchPackagePatterns": ["^org.springframework.batch:"]
+           },
+           {
+             "groupName": "spring boot",
+             "matchPackagePatterns": ["^org.springframework.boot:"]
+           },
+           {
+             "groupName": "spring cloud",
+             "matchPackagePatterns": ["^org.springframework.cloud:"]
+           },
+           {
+             "groupName": "spring core",
+             "matchPackagePatterns": ["^org.springframework:"]
+           },
+           {
+             "groupName": "spring data",
+             "matchPackagePatterns": ["^org.springframework.data:"]
+           },
+           {
+             "groupName": "spring hateoas",
+             "matchPackagePatterns": ["^org.springframework.hateoas:"]
+           },
+           {
+             "groupName": "spring integration",
+             "matchPackagePatterns": ["^org.springframework.integration:"]
+           },
+           {
+             "groupName": "spring kafka",
+             "matchPackagePatterns": ["^org.springframework.kafka:"]
+           },
+           {
+             "groupName": "spring ldap",
+             "matchPackagePatterns": ["^org.springframework.ldap:"]
+           },
+           {
+             "groupName": "spring mobile",
+             "matchPackagePatterns": ["^org.springframework.mobile:"]
+           },
+           {
+             "groupName": "spring osgi",
+             "matchPackagePatterns": ["^org.springframework.osgi:"]
+           },
+           {
+             "groupName": "spring restdocs",
+             "matchPackagePatterns": ["^org.springframework.restdocs:"]
+           },
+           {
+             "groupName": "spring roo",
+             "matchPackagePatterns": ["^org.springframework.roo:"]
+           },
+           {
+             "groupName": "spring scala",
+             "matchPackagePatterns": ["^org.springframework.scala:"]
+           },
+           {
+             "groupName": "spring security",
+             "matchPackagePatterns": ["^org.springframework.security:"]
+           },
+           {
+             "groupName": "spring session",
+             "matchPackagePatterns": ["^org.springframework.session:"]
+           },
+           {
+             "groupName": "spring shell",
+             "matchPackagePatterns": ["^org.springframework.shell:"]
+           },
+           {
+             "groupName": "spring social",
+             "matchPackagePatterns": ["^org.springframework.social:"]
+           },
+           {
+             "groupName": "spring statemachine",
+             "matchPackagePatterns": ["^org.springframework.statemachine:"]
+           },
+           {
+             "groupName": "spring webflow",
+             "matchPackagePatterns": ["^org.springframework.webflow:"]
+           },
+           {
+             "groupName": "spring ws",
+             "matchPackagePatterns": ["^org.springframework.ws:"]
+           },
+           {
+             "matchPackagePatterns": ["^symfony/"],
+             "groupName": "symfony packages",
+             "groupSlug": "symfony"
+           },
+           {
+             "matchPackageNames": ["@types/node"],
+             "matchUpdateTypes": ["major"],
+             "enabled": false
+           },
+           {
+             "matchDatasources": ["maven", "sbt-package"],
+             "matchPackagePatterns": ["^commons-"],
+             "allowedVersions": "!/^200\\d{5}(\\.\\d+)?/"
+           },
+           {
+             "matchDatasources": ["maven"],
+             "matchPackageNames": [
+               "org.springframework.cloud:spring-cloud-starter-parent"
+             ],
+             "allowedVersions": "/^[A-Z]/"
+           },
+           {
+             "matchManagers": ["sbt"],
+             "matchPackagePatterns": ["^org\\.http4s:"],
+             "allowedVersions": "!/^1\\.0-\\d+-[a-fA-F0-9]{7}$/"
+           },
+           {
+             "matchDepTypes": ["require", "dependencies", "peerDependencies"],
+             "semanticCommitType": "perf"
+           },
+           {
+             "matchDepTypes": [
+               "devDependencies",
+               "peerDevDependencies",
+               "require-dev"
+             ],
+             "rangeStrategy": "replace"
+           }
+         ],
+         "ignoreDeps": [],
+         "matchPackageNames": [
+           "fusion-cli",
+           "fusion-core",
+           "fusion-test-utils",
+           "fusion-tokens"
+         ],
+         "matchPackagePatterns": [
+           "^fusion-plugin-*",
+           "^fusion-react*",
+           "^fusion-apollo*"
+         ],
+         "minor": {"automerge": true},
+         "patch": {"automerge": true},
+         "pin": {"automerge": true},
+         "lockFileMaintenance": {
+           "automerge": true,
+           "enabled": true,
+           "commitMessageAction": "update lock file",
+           "schedule": ["before 5am"],
+           "groupName": "lock"
+         },
+         "semanticCommits": "enabled",
+         "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+         "semanticCommitType": "chore",
+         "semanticCommitScope": "deps",
+         "timezone": "UTC",
+         "baseBranches": ["example"],
+         "hostRules": [],
+         "repositories": ["ph-fritsche/renovate-config"],
+         "dryRun": true,
+         "token": "***********"
+       }
+DEBUG: Using default github endpoint: https://api.github.com/
+DEBUG: GitHub 404
+       "url": "https://api.github.com/user/emails"
+DEBUG: Cannot read user/emails endpoint on GitHub to retrieve gitAuthor
+DEBUG: Authenticated as GitHub user: ph-fritsche
+DEBUG: Using default gitAuthor: Renovate Bot <renovate@whitesourcesoftware.com>
+DEBUG: Using baseDir: /tmp/renovate
+DEBUG: Using cacheDir: /tmp/renovate/cache
+DEBUG: Initializing Renovate internal cache into /tmp/renovate/cache/renovate/renovate-cache-v1
+DEBUG: Commits limit = null
+ INFO: Repository started (repository=ph-fritsche/renovate-config)
+       "renovateVersion": "24.74.0"
+DEBUG: Using localDir: /tmp/renovate/repos/github/ph-fritsche/renovate-config (repository=ph-fritsche/renovate-config)
+DEBUG: initRepo("ph-fritsche/renovate-config") (repository=ph-fritsche/renovate-config)
+DEBUG: Overriding default GitHub endpoint (repository=ph-fritsche/renovate-config)
+       "endpoint": "https://api.github.com/"
+DEBUG: ph-fritsche/renovate-config default branch = master (repository=ph-fritsche/renovate-config)
+DEBUG: Using personal access token for git init (repository=ph-fritsche/renovate-config)
+DEBUG: resetMemCache() (repository=ph-fritsche/renovate-config)
+DEBUG: checkOnboarding() (repository=ph-fritsche/renovate-config)
+DEBUG: isOnboarded() (repository=ph-fritsche/renovate-config)
+DEBUG: findFile(renovate.json) (repository=ph-fritsche/renovate-config)
+DEBUG: Initializing git repository into /tmp/renovate/repos/github/ph-fritsche/renovate-config (repository=ph-fritsche/renovate-config)
+DEBUG: git clone completed (repository=ph-fritsche/renovate-config)
+       "durationMs": 295
+DEBUG: latest commit (repository=ph-fritsche/renovate-config)
+       "latestCommitDate": "2021-03-05T16:01:48+01:00"
+DEBUG: Setting git author name (repository=ph-fritsche/renovate-config)
+       "gitAuthorName": "Renovate Bot"
+DEBUG: Setting git author email (repository=ph-fritsche/renovate-config)
+       "gitAuthorEmail": "renovate@whitesourcesoftware.com"
+DEBUG: Config file exists (repository=ph-fritsche/renovate-config)
+       "fileName": "renovate.json"
+DEBUG: Retrieving issueList (repository=ph-fritsche/renovate-config)
+DEBUG: Retrieved 0 issues (repository=ph-fritsche/renovate-config)
+DEBUG: Repo is onboarded (repository=ph-fritsche/renovate-config)
+DEBUG: Found renovate.json config file (repository=ph-fritsche/renovate-config)
+DEBUG: Repository config (repository=ph-fritsche/renovate-config)
+       "fileName": "renovate.json",
+       "config": {
+         "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+         "extends": ["config:base", ":automergeMinor", ":semanticCommits"],
+         "ignorePresets": [":semanticPrefixFixDepsChoreOthers"],
+         "lockFileMaintenance": {
+           "enabled": true,
+           "commitMessageAction": "update lock file",
+           "schedule": ["before 5am"],
+           "groupName": "lock"
+         },
+         "semanticCommits": "enabled",
+         "semanticCommitType": "chore",
+         "semanticCommitScope": "deps",
+         "timezone": "UTC",
+         "rangeStrategy": "widen",
+         "packageRules": [
+           {
+             "matchDepTypes": ["require", "dependencies", "peerDependencies"],
+             "semanticCommitType": "perf"
+           },
+           {
+             "matchDepTypes": [
+               "devDependencies",
+               "peerDevDependencies",
+               "require-dev"
+             ],
+             "rangeStrategy": "replace"
+           }
+         ]
+       }
+DEBUG: migrateAndValidate() (repository=ph-fritsche/renovate-config)
+DEBUG: No config migration necessary (repository=ph-fritsche/renovate-config)
+DEBUG: massaged config (repository=ph-fritsche/renovate-config)
+       "config": {
+         "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+         "extends": ["config:base", ":automergeMinor", ":semanticCommits"],
+         "ignorePresets": [":semanticPrefixFixDepsChoreOthers"],
+         "lockFileMaintenance": {
+           "enabled": true,
+           "commitMessageAction": "update lock file",
+           "schedule": ["before 5am"],
+           "groupName": "lock"
+         },
+         "semanticCommits": "enabled",
+         "semanticCommitType": "chore",
+         "semanticCommitScope": "deps",
+         "timezone": "UTC",
+         "rangeStrategy": "widen",
+         "packageRules": [
+           {
+             "matchDepTypes": ["require", "dependencies", "peerDependencies"],
+             "semanticCommitType": "perf"
+           },
+           {
+             "matchDepTypes": [
+               "devDependencies",
+               "peerDevDependencies",
+               "require-dev"
+             ],
+             "rangeStrategy": "replace"
+           }
+         ]
+       }
+DEBUG: migrated config (repository=ph-fritsche/renovate-config)
+       "config": {
+         "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+         "extends": ["config:base", ":automergeMinor", ":semanticCommits"],
+         "ignorePresets": [":semanticPrefixFixDepsChoreOthers"],
+         "lockFileMaintenance": {
+           "enabled": true,
+           "commitMessageAction": "update lock file",
+           "schedule": ["before 5am"],
+           "groupName": "lock"
+         },
+         "semanticCommits": "enabled",
+         "semanticCommitType": "chore",
+         "semanticCommitScope": "deps",
+         "timezone": "UTC",
+         "rangeStrategy": "widen",
+         "packageRules": [
+           {
+             "matchDepTypes": ["require", "dependencies", "peerDependencies"],
+             "semanticCommitType": "perf"
+           },
+           {
+             "matchDepTypes": [
+               "devDependencies",
+               "peerDevDependencies",
+               "require-dev"
+             ],
+             "rangeStrategy": "replace"
+           }
+         ]
+       }
+DEBUG: Ignoring preset :semanticPrefixFixDepsChoreOthers in [config:base] (repository=ph-fritsche/renovate-config)
+DEBUG: Found repo ignorePaths (repository=ph-fritsche/renovate-config)
+       "ignorePaths": [
+         "**/node_modules/**",
+         "**/bower_components/**",
+         "**/vendor/**",
+         "**/examples/**",
+         "**/__tests__/**",
+         "**/test/**",
+         "**/tests/**",
+         "**/__fixtures__/**"
+       ]
+DEBUG: Setting branchPrefix: renovate/ (repository=ph-fritsche/renovate-config)
+DEBUG: Cannot read vulnerability alerts (repository=ph-fritsche/renovate-config)
+DEBUG: No vulnerability alerts found (repository=ph-fritsche/renovate-config)
+DEBUG: processRepo() (repository=ph-fritsche/renovate-config)
+DEBUG: baseBranches (repository=ph-fritsche/renovate-config)
+       "baseBranches": ["example"]
+DEBUG: baseBranch: example (repository=ph-fritsche/renovate-config)
+DEBUG: extract() (repository=ph-fritsche/renovate-config)
+DEBUG: Setting current branch to example (repository=ph-fritsche/renovate-config)
+DEBUG: latest commit (repository=ph-fritsche/renovate-config)
+       "branchName": "example",
+       "latestCommitDate": "2021-03-04T18:38:50+01:00"
+DEBUG: Using file match: (^|/)tasks/[^/]+\.ya?ml$ for manager ansible (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)requirements\.ya?ml$ for manager ansible-galaxy (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: azure.*pipelines?.*\.ya?ml$ for manager azure-pipelines (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)batect(-bundle)?\.yml$ for manager batect (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)batect$ for manager batect-wrapper (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)WORKSPACE(|\.bazel)$ for manager bazel (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: \.bzl$ for manager bazel (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: buildkite\.ya?ml for manager buildkite (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: \.buildkite/.+\.ya?ml$ for manager buildkite (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)Gemfile$ for manager bundler (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)Cargo.toml$ for manager cargo (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/).circleci/config.yml$ for manager circleci (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)cloudbuild.ya?ml for manager cloudbuild (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)Podfile$ for manager cocoapods (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)([\w-]*)composer.json$ for manager composer (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)deps\.edn$ for manager deps-edn (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)docker-compose[^/]*\.ya?ml$ for manager docker-compose (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/|\.)Dockerfile$ for manager dockerfile (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)Dockerfile\.[^/]*$ for manager dockerfile (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/).drone.yml$ for manager droneci (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/).gitmodules$ for manager git-submodules (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: ^\.github\/workflows\/[^/]+\.ya?ml$ for manager github-actions (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: ^\.gitlab-ci\.yml$ for manager gitlabci (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: ^\.gitlab-ci\.yml$ for manager gitlabci-include (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)go.mod$ for manager gomod (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: \.gradle(\.kts)?$ for manager gradle (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)gradle.properties$ for manager gradle (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)gradle.properties$ for manager gradle-lite (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: \.gradle(\.kts)?$ for manager gradle-lite (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)gradle/wrapper/gradle-wrapper.properties$ for manager gradle-wrapper (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)requirements\.yaml$ for manager helm-requirements (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)values.yaml$ for manager helm-values (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)helmfile.yaml$ for manager helmfile (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)Chart.yaml$ for manager helmv3 (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: ^Formula/[^/]+[.]rb$ for manager homebrew (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: \.html?$ for manager html (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)plugins\.txt for manager jenkins (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)kustomization\.yaml for manager kustomize (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)project\.clj$ for manager leiningen (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: \.pom\.xml$ for manager maven (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)pom\.xml$ for manager maven (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)package.js$ for manager meteor (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)mix\.exs$ for manager mix (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: ^.node-version$ for manager nodenv (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)package.json$ for manager npm (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: \.(?:cs|fs|vb)proj$ for manager nuget (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: \.(?:props|targets)$ for manager nuget (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: \.config\/dotnet-tools\.json$ for manager nuget (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)\.nvmrc$ for manager nvm (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)([\w-]*)requirements.(txt|pip)$ for manager pip_requirements (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)setup.py$ for manager pip_setup (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)Pipfile$ for manager pipenv (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)pyproject\.toml$ for manager poetry (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)\.pre-commit-config\.yaml$ for manager pre-commit (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)pubspec\.ya?ml$ for manager pub (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)\.ruby-version$ for manager ruby-version (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: \.sbt$ for manager sbt (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: project/[^/]*.scala$ for manager sbt (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)setup\.cfg$ for manager setup-cfg (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)Package\.swift for manager swift (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: \.tf$ for manager terraform (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)\.terraform-version$ for manager terraform-version (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)terragrunt\.hcl$ for manager terragrunt (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: (^|/)\.terragrunt-version$ for manager terragrunt-version (repository=ph-fritsche/renovate-config)
+DEBUG: Using file match: ^.travis.yml$ for manager travis (repository=ph-fritsche/renovate-config)
+DEBUG: Matched 1 file(s) for manager composer: composer.json (repository=ph-fritsche/renovate-config)
+DEBUG: Matched 1 file(s) for manager npm: package.json (repository=ph-fritsche/renovate-config)
+DEBUG: npm file package.json has name "@example/example" (repository=ph-fritsche/renovate-config)
+DEBUG: Found composer lock file (repository=ph-fritsche/renovate-config, packageFile=composer.json)
+DEBUG: Detecting Lerna and Yarn Workspaces (repository=ph-fritsche/renovate-config)
+DEBUG: Finding locked versions (repository=ph-fritsche/renovate-config)
+DEBUG: Found composer package files (repository=ph-fritsche/renovate-config)
+DEBUG: Found npm package files (repository=ph-fritsche/renovate-config)
+DEBUG: Found 2 package file(s) (repository=ph-fritsche/renovate-config)
+ INFO: Dependency extraction complete (repository=ph-fritsche/renovate-config)
+       "baseBranch": "example",
+       "stats": {
+         "managers": {
+           "composer": {"fileCount": 1, "depCount": 4},
+           "npm": {"fileCount": 1, "depCount": 8}
+         },
+         "total": {"fileCount": 2, "depCount": 12}
+       }
+DEBUG: baseBranch: example (repository=ph-fritsche/renovate-config)
+DEBUG: Found deprecationMessage (repository=ph-fritsche/renovate-config, dependency=request)
+DEBUG: Package releases lookups complete (repository=ph-fritsche/renovate-config)
+       "baseBranch": "example"
+DEBUG: packageFiles with updates (repository=ph-fritsche/renovate-config)
+       "config": {
+         "composer": [
+           {
+             "packageFile": "composer.json",
+             "deps": [
+               {
+                 "depType": "require",
+                 "depName": "symfony/event-dispatcher",
+                 "currentValue": "^3.4.5",
+                 "datasource": "packagist",
+                 "lockedVersion": "3.4.47",
+                 "depIndex": 0,
+                 "updates": [
+                   {
+                     "currentVersion": "3.4.47",
+                     "newVersion": "5.2.4",
+                     "newValue": "^3.4.5 || ^5.0.0",
+                     "bucket": "major",
+                     "newMajor": 5,
+                     "newMinor": 2,
+                     "updateType": "major",
+                     "isSingleVersion": false,
+                     "isRange": true,
+                     "releaseTimestamp": "2021-02-18T17:12:37.000Z",
+                     "skippedOverVersions": [
+                       "4.0.0",
+                       "4.0.1",
+                       "4.0.2",
+                       "4.0.3",
+                       "4.0.4",
+                       "4.0.5",
+                       "4.0.6",
+                       "4.0.7",
+                       "4.0.8",
+                       "4.0.9",
+                       "4.0.10",
+                       "4.0.11",
+                       "4.0.12",
+                       "4.0.13",
+                       "4.0.14",
+                       "4.0.15",
+                       "4.1.0",
+                       "4.1.1",
+                       "4.1.2",
+                       "4.1.3",
+                       "4.1.4",
+                       "4.1.5",
+                       "4.1.6",
+                       "4.1.7",
+                       "4.1.8",
+                       "4.1.9",
+                       "4.1.10",
+                       "4.1.11",
+                       "4.1.12",
+                       "4.2.0",
+                       "4.2.1",
+                       "4.2.2",
+                       "4.2.3",
+                       "4.2.4",
+                       "4.2.5",
+                       "4.2.6",
+                       "4.2.7",
+                       "4.2.8",
+                       "4.2.9",
+                       "4.2.10",
+                       "4.2.11",
+                       "4.2.12",
+                       "4.3.0",
+                       "4.3.1",
+                       "4.3.2",
+                       "4.3.3",
+                       "4.3.4",
+                       "4.3.5",
+                       "4.3.6",
+                       "4.3.7",
+                       "4.3.8",
+                       "4.3.9",
+                       "4.3.10",
+                       "4.3.11",
+                       "4.4.0",
+                       "4.4.1",
+                       "4.4.2",
+                       "4.4.3",
+                       "4.4.4",
+                       "4.4.5",
+                       "4.4.6",
+                       "4.4.7",
+                       "4.4.8",
+                       "4.4.9",
+                       "4.4.10",
+                       "4.4.11",
+                       "4.4.12",
+                       "4.4.13",
+                       "4.4.14",
+                       "4.4.15",
+                       "4.4.16",
+                       "4.4.17",
+                       "4.4.18",
+                       "4.4.19",
+                       "4.4.20",
+                       "5.0.0",
+                       "5.0.1",
+                       "5.0.2",
+                       "5.0.3",
+                       "5.0.4",
+                       "5.0.5",
+                       "5.0.6",
+                       "5.0.7",
+                       "5.0.8",
+                       "5.0.9",
+                       "5.0.10",
+                       "5.0.11",
+                       "5.1.0",
+                       "5.1.1",
+                       "5.1.2",
+                       "5.1.3",
+                       "5.1.4",
+                       "5.1.5",
+                       "5.1.6",
+                       "5.1.7",
+                       "5.1.8",
+                       "5.1.9",
+                       "5.1.10",
+                       "5.1.11",
+                       "5.2.0",
+                       "5.2.1",
+                       "5.2.2",
+                       "5.2.3"
+                     ]
+                   }
+                 ],
+                 "warnings": [],
+                 "sourceUrl": "https://github.com/symfony/event-dispatcher",
+                 "homepage": "https://symfony.com",
+                 "fixedVersion": "3.4.47"
+               },
+               {
+                 "depType": "require",
+                 "depName": "symfony/process",
+                 "currentValue": "^5.1.2",
+                 "datasource": "packagist",
+                 "lockedVersion": "5.2.3",
+                 "depIndex": 1,
+                 "updates": [],
+                 "warnings": [],
+                 "sourceUrl": "https://github.com/symfony/process",
+                 "homepage": "https://symfony.com",
+                 "fixedVersion": "5.2.3"
+               },
+               {
+                 "depType": "require-dev",
+                 "depName": "symfony/console",
+                 "currentValue": "^4.1.2",
+                 "datasource": "packagist",
+                 "lockedVersion": "4.2.12",
+                 "depIndex": 2,
+                 "updates": [
+                   {
+                     "currentVersion": "4.4.20",
+                     "newVersion": "5.2.4",
+                     "newValue": "^5.0.0",
+                     "bucket": "major",
+                     "newMajor": 5,
+                     "newMinor": 2,
+                     "updateType": "major",
+                     "isSingleVersion": false,
+                     "isRange": true,
+                     "releaseTimestamp": "2021-02-23T10:08:49.000Z",
+                     "skippedOverVersions": [
+                       "5.0.0",
+                       "5.0.1",
+                       "5.0.2",
+                       "5.0.3",
+                       "5.0.4",
+                       "5.0.5",
+                       "5.0.6",
+                       "5.0.7",
+                       "5.0.8",
+                       "5.0.9",
+                       "5.0.10",
+                       "5.0.11",
+                       "5.1.0",
+                       "5.1.1",
+                       "5.1.2",
+                       "5.1.3",
+                       "5.1.4",
+                       "5.1.5",
+                       "5.1.6",
+                       "5.1.7",
+                       "5.1.8",
+                       "5.1.9",
+                       "5.1.10",
+                       "5.1.11",
+                       "5.2.0",
+                       "5.2.1",
+                       "5.2.2",
+                       "5.2.3"
+                     ]
+                   }
+                 ],
+                 "warnings": [],
+                 "sourceUrl": "https://github.com/symfony/console",
+                 "homepage": "https://symfony.com",
+                 "fixedVersion": "4.2.12"
+               },
+               {
+                 "depType": "require-dev",
+                 "depName": "symfony/finder",
+                 "currentValue": "^5.0.1",
+                 "datasource": "packagist",
+                 "lockedVersion": "5.2.3",
+                 "depIndex": 3,
+                 "updates": [],
+                 "warnings": [],
+                 "sourceUrl": "https://github.com/symfony/finder",
+                 "homepage": "https://symfony.com",
+                 "fixedVersion": "5.2.3"
+               }
+             ],
+             "lockFiles": ["composer.lock"],
+             "constraints": {"composer": "1.*"}
+           }
+         ],
+         "npm": [
+           {
+             "packageFile": "package.json",
+             "deps": [
+               {
+                 "depType": "dependencies",
+                 "depName": "lodash",
+                 "currentValue": "^3.0.1",
+                 "datasource": "npm",
+                 "prettyDepType": "dependency",
+                 "lockedVersion": "3.10.1",
+                 "depIndex": 0,
+                 "updates": [
+                   {
+                     "currentVersion": "3.10.1",
+                     "newVersion": "4.17.21",
+                     "newValue": "^3.0.1 || ^4.0.0",
+                     "bucket": "major",
+                     "newMajor": 4,
+                     "newMinor": 17,
+                     "updateType": "major",
+                     "isSingleVersion": false,
+                     "isRange": true,
+                     "releaseTimestamp": "2021-02-20T15:42:16.891Z",
+                     "skippedOverVersions": [
+                       "4.0.0",
+                       "4.0.1",
+                       "4.1.0",
+                       "4.2.0",
+                       "4.2.1",
+                       "4.3.0",
+                       "4.4.0",
+                       "4.5.0",
+                       "4.5.1",
+                       "4.6.0",
+                       "4.6.1",
+                       "4.7.0",
+                       "4.8.0",
+                       "4.8.1",
+                       "4.8.2",
+                       "4.9.0",
+                       "4.10.0",
+                       "4.11.0",
+                       "4.11.1",
+                       "4.11.2",
+                       "4.12.0",
+                       "4.13.0",
+                       "4.13.1",
+                       "4.14.0",
+                       "4.14.1",
+                       "4.14.2",
+                       "4.15.0",
+                       "4.16.0",
+                       "4.16.1",
+                       "4.16.2",
+                       "4.16.3",
+                       "4.16.4",
+                       "4.16.5",
+                       "4.16.6",
+                       "4.17.0",
+                       "4.17.1",
+                       "4.17.2",
+                       "4.17.3",
+                       "4.17.4",
+                       "4.17.5",
+                       "4.17.9",
+                       "4.17.10",
+                       "4.17.11",
+                       "4.17.12",
+                       "4.17.13",
+                       "4.17.14",
+                       "4.17.15",
+                       "4.17.16",
+                       "4.17.17",
+                       "4.17.18",
+                       "4.17.19",
+                       "4.17.20"
+                     ]
+                   }
+                 ],
+                 "warnings": [],
+                 "sourceUrl": "https://github.com/lodash/lodash",
+                 "homepage": "https://lodash.com/",
+                 "fixedVersion": "3.10.1"
+               },
+               {
+                 "depType": "dependencies",
+                 "depName": "react",
+                 "currentValue": "^17.0.0",
+                 "datasource": "npm",
+                 "prettyDepType": "dependency",
+                 "lockedVersion": "17.0.1",
+                 "depIndex": 1,
+                 "updates": [],
+                 "warnings": [],
+                 "sourceUrl": "https://github.com/facebook/react",
+                 "sourceDirectory": "packages/react",
+                 "homepage": "https://reactjs.org/",
+                 "fixedVersion": "17.0.1"
+               },
+               {
+                 "depType": "devDependencies",
+                 "depName": "request",
+                 "currentValue": "^2.9.1",
+                 "datasource": "npm",
+                 "prettyDepType": "devDependency",
+                 "lockedVersion": "2.88.2",
+                 "depIndex": 2,
+                 "updates": [],
+                 "warnings": [],
+                 "deprecationMessage": "On registry `https://registry.npmjs.org/`, the \"latest\" version of dependency `request` has the following deprecation notice:\n\n`request has been deprecated, see https://github.com/request/request/issues/3142`\n\nMarking the latest version of an npm package as deprecated results in the entire package being considered deprecated, so contact the package author you think this is a mistake.",
+                 "sourceUrl": "https://github.com/request/request",
+                 "fixedVersion": "2.88.2"
+               },
+               {
+                 "depType": "devDependencies",
+                 "depName": "axios",
+                 "currentValue": "^0.20.0",
+                 "datasource": "npm",
+                 "prettyDepType": "devDependency",
+                 "lockedVersion": "0.20.0",
+                 "depIndex": 3,
+                 "updates": [
+                   {
+                     "currentVersion": "0.20.0",
+                     "newVersion": "0.21.1",
+                     "newValue": "^0.21.0",
+                     "bucket": "non-major",
+                     "newMajor": 0,
+                     "newMinor": 21,
+                     "updateType": "minor",
+                     "isSingleVersion": false,
+                     "isRange": true,
+                     "releaseTimestamp": "2020-12-22T04:20:06.101Z",
+                     "skippedOverVersions": ["0.21.0"]
+                   }
+                 ],
+                 "warnings": [],
+                 "sourceUrl": "https://github.com/axios/axios",
+                 "fixedVersion": "0.20.0"
+               },
+               {
+                 "depType": "devDependencies",
+                 "depName": "express",
+                 "currentValue": "^4.15.4",
+                 "datasource": "npm",
+                 "prettyDepType": "devDependency",
+                 "lockedVersion": "4.17.1",
+                 "depIndex": 4,
+                 "updates": [],
+                 "warnings": [],
+                 "sourceUrl": "https://github.com/expressjs/express",
+                 "homepage": "http://expressjs.com/",
+                 "fixedVersion": "4.17.1"
+               },
+               {
+                 "depType": "optionalDependencies",
+                 "depName": "commander",
+                 "currentValue": "^6.1.0",
+                 "datasource": "npm",
+                 "prettyDepType": "optionalDependency",
+                 "lockedVersion": "6.2.1",
+                 "depIndex": 5,
+                 "updates": [
+                   {
+                     "currentVersion": "6.2.1",
+                     "newVersion": "7.1.0",
+                     "newValue": "^6.1.0 || ^7.0.0",
+                     "bucket": "major",
+                     "newMajor": 7,
+                     "newMinor": 1,
+                     "updateType": "major",
+                     "isSingleVersion": false,
+                     "isRange": true,
+                     "releaseTimestamp": "2021-02-15T07:24:42.526Z",
+                     "skippedOverVersions": ["7.0.0"]
+                   }
+                 ],
+                 "warnings": [],
+                 "sourceUrl": "https://github.com/tj/commander.js",
+                 "fixedVersion": "6.2.1"
+               },
+               {
+                 "depType": "peerDependencies",
+                 "depName": "chalk",
+                 "currentValue": "^2.3.1",
+                 "datasource": "npm",
+                 "prettyDepType": "peerDependency",
+                 "depIndex": 6,
+                 "updates": [
+                   {
+                     "currentVersion": "2.4.2",
+                     "newVersion": "4.1.0",
+                     "newValue": "^2.3.1 || ^4.0.0",
+                     "bucket": "major",
+                     "newMajor": 4,
+                     "newMinor": 1,
+                     "updateType": "major",
+                     "isSingleVersion": false,
+                     "isRange": true,
+                     "releaseTimestamp": "2020-06-09T07:43:42.525Z",
+                     "skippedOverVersions": ["3.0.0", "4.0.0"]
+                   }
+                 ],
+                 "warnings": [],
+                 "sourceUrl": "https://github.com/chalk/chalk"
+               },
+               {
+                 "depType": "peerDependencies",
+                 "depName": "tslib",
+                 "currentValue": "^2.0.1",
+                 "datasource": "npm",
+                 "prettyDepType": "peerDependency",
+                 "depIndex": 7,
+                 "updates": [],
+                 "warnings": [],
+                 "sourceUrl": "https://github.com/Microsoft/tslib",
+                 "homepage": "https://www.typescriptlang.org/"
+               }
+             ],
+             "packageJsonName": "@example/example",
+             "packageJsonType": "app",
+             "yarnLock": "yarn.lock",
+             "skipInstalls": true,
+             "constraints": {},
+             "lockFiles": ["yarn.lock"]
+           }
+         ]
+       }
+DEBUG: branchifyUpgrades (repository=ph-fritsche/renovate-config)
+DEBUG: Using group branchName template (repository=ph-fritsche/renovate-config)
+DEBUG: Dependency symfony/event-dispatcher is part of group symfony packages (repository=ph-fritsche/renovate-config)
+DEBUG: Using group branchName template (repository=ph-fritsche/renovate-config)
+DEBUG: Dependency symfony/console is part of group symfony packages (repository=ph-fritsche/renovate-config)
+DEBUG: Using group branchName template (repository=ph-fritsche/renovate-config)
+DEBUG: Dependency undefined is part of group lock (repository=ph-fritsche/renovate-config)
+DEBUG: Using group branchName template (repository=ph-fritsche/renovate-config)
+DEBUG: Dependency lodash is part of group lodash monorepo (repository=ph-fritsche/renovate-config)
+DEBUG: Using group branchName template (repository=ph-fritsche/renovate-config)
+DEBUG: Dependency undefined is part of group lock (repository=ph-fritsche/renovate-config)
+DEBUG: 8 flattened updates found: symfony/event-dispatcher, symfony/console, lodash, axios, commander, chalk (repository=ph-fritsche/renovate-config)
+DEBUG: Returning 6 branch(es) (repository=ph-fritsche/renovate-config)
+DEBUG: Fetching changelog: https://github.com/symfony/console (4.4.20 -> 5.2.4) (repository=ph-fritsche/renovate-config)
+DEBUG: Fetching changelog: https://github.com/symfony/event-dispatcher (3.4.47 -> 5.2.4) (repository=ph-fritsche/renovate-config)
+DEBUG: Fetching changelog: https://github.com/lodash/lodash (3.10.1 -> 4.17.21) (repository=ph-fritsche/renovate-config)
+DEBUG: Fetching changelog: https://github.com/axios/axios (0.20.0 -> 0.21.1) (repository=ph-fritsche/renovate-config)
+DEBUG: Fetching changelog: https://github.com/tj/commander.js (6.2.1 -> 7.1.0) (repository=ph-fritsche/renovate-config)
+DEBUG: Fetching changelog: https://github.com/chalk/chalk (2.4.2 -> 4.1.0) (repository=ph-fritsche/renovate-config)
+DEBUG: config.repoIsOnboarded=true (repository=ph-fritsche/renovate-config)
+DEBUG: processRepo() (repository=ph-fritsche/renovate-config)
+DEBUG: Processing 6 branches: renovate/axios-0.x, renovate/chalk-4.x, renovate/commander-7.x, renovate/lock, renovate/major-lodash-monorepo, renovate/major-symfony (repository=ph-fritsche/renovate-config)
+DEBUG: Calculating hourly PRs remaining (repository=ph-fritsche/renovate-config)
+DEBUG: Retrieving PR list (repository=ph-fritsche/renovate-config)
+DEBUG: Retrieved 1 Pull Requests (repository=ph-fritsche/renovate-config)
+DEBUG: currentHourStart=2021-03-05T15:00:00.000+00:00 (repository=ph-fritsche/renovate-config)
+DEBUG: PR hourly limit remaining: 2 (repository=ph-fritsche/renovate-config)
+DEBUG: Calculating prConcurrentLimit (20) (repository=ph-fritsche/renovate-config)
+DEBUG: getBranchPr(renovate/axios-0.x) (repository=ph-fritsche/renovate-config)
+DEBUG: findPr(renovate/axios-0.x, undefined, open) (repository=ph-fritsche/renovate-config)
+DEBUG: getBranchPr(renovate/commander-7.x) (repository=ph-fritsche/renovate-config)
+DEBUG: findPr(renovate/commander-7.x, undefined, open) (repository=ph-fritsche/renovate-config)
+DEBUG: getBranchPr(renovate/major-symfony) (repository=ph-fritsche/renovate-config)
+DEBUG: findPr(renovate/major-symfony, undefined, open) (repository=ph-fritsche/renovate-config)
+DEBUG: getBranchPr(renovate/chalk-4.x) (repository=ph-fritsche/renovate-config)
+DEBUG: findPr(renovate/chalk-4.x, undefined, open) (repository=ph-fritsche/renovate-config)
+DEBUG: getBranchPr(renovate/major-lodash-monorepo) (repository=ph-fritsche/renovate-config)
+DEBUG: findPr(renovate/major-lodash-monorepo, undefined, open) (repository=ph-fritsche/renovate-config)
+DEBUG: getBranchPr(renovate/lock) (repository=ph-fritsche/renovate-config)
+DEBUG: findPr(renovate/lock, undefined, open) (repository=ph-fritsche/renovate-config)
+DEBUG: 0 PRs are currently open (repository=ph-fritsche/renovate-config)
+DEBUG: PR concurrent limit remaining: 20 (repository=ph-fritsche/renovate-config)
+DEBUG: Calculated maximum PRs remaining this run (repository=ph-fritsche/renovate-config)
+       "prsRemaining": 2
+DEBUG: PullRequests limit = 2 (repository=ph-fritsche/renovate-config)
+DEBUG: Calculating branchConcurrentLimit (20) (repository=ph-fritsche/renovate-config)
+DEBUG: 0 already existing branches found:  (repository=ph-fritsche/renovate-config)
+DEBUG: Branch concurrent limit remaining: 20 (repository=ph-fritsche/renovate-config)
+DEBUG: Calculated maximum branches remaining this run (repository=ph-fritsche/renovate-config)
+       "branchesRemaining": 20
+DEBUG: Branches limit = 20 (repository=ph-fritsche/renovate-config)
+DEBUG: processBranch with 1 upgrades (repository=ph-fritsche/renovate-config, dependencies=axios, branch=renovate/axios-0.x)
+DEBUG: Setting current branch to example (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: latest commit (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+       "branchName": "example",
+       "latestCommitDate": "2021-03-04T18:38:50+01:00"
+DEBUG: getBranchPr(renovate/axios-0.x) (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: findPr(renovate/axios-0.x, undefined, open) (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: branchExists=false (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Branch has 1 upgrade(s) (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: recreateClosed is false (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: findPr(renovate/axios-0.x, chore(deps): update dependency axios to ^0.21.0, !open) (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: prAlreadyExisted=false (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Checking schedule(at any time, UTC) (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: No schedule defined (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Branch needs creating (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Using reuseExistingBranch: false (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: manager.getUpdatedPackageFiles() reuseExistinbranch=false (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: npm.updateDependency(): devDependencies.axios = ^0.21.0 (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Updating axios in package.json (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Updated 1 package files (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Getting updated lock files (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Writing package.json files (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+       "packageFiles": ["package.json"]
+DEBUG: Writing any updated package files (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Writing package.json (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: No npmrc file found in repository (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Writing updated .npmrc file to /tmp/renovate/repos/github/ph-fritsche/renovate-config/.npmrc (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Generating yarn.lock for . (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Spawning yarn install to create /tmp/renovate/repos/github/ph-fritsche/renovate-config/yarn.lock (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Updating yarn.lock only - skipping node_modules (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: No node constraint found - using latest (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: Executing command (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+       "command": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts"
+DEBUG: exec completed (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+       "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
+       "durationMs": 3031,
+       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nsuccess Saved lockfile.\nDone in 2.71s.\n",
+       "stderr": "warning Skipping preferred cache folder \"/home/runner/.cache/yarn\" because it is not writable.\nwarning Selected the next writable cache folder in the list, will be \"/tmp/.yarn-cache-1001\".\nwarning Ignored scripts due to flag.\n"
+DEBUG: yarn.lock needs updating (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: updateYarnOffline resolvedPaths (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+       "resolvedPaths": []
+DEBUG: Updated 1 lock files (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+       "updatedArtifacts": ["yarn.lock"]
+DEBUG: 2 file(s) to commit (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+ INFO: DRY-RUN: Would commit files to branch renovate/axios-0.x (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
+DEBUG: processBranch with 1 upgrades (repository=ph-fritsche/renovate-config, dependencies=commander, branch=renovate/commander-7.x)
+DEBUG: Setting current branch to example (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: latest commit (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "branchName": "example",
+       "latestCommitDate": "2021-03-04T18:38:50+01:00"
+DEBUG: getBranchPr(renovate/commander-7.x) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: findPr(renovate/commander-7.x, undefined, open) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: branchExists=false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Branch has 1 upgrade(s) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: recreateClosed is false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: findPr(renovate/commander-7.x, chore(deps): update dependency commander to v7, !open) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: prAlreadyExisted=false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Checking schedule(at any time, UTC) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: No schedule defined (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Branch needs creating (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Using reuseExistingBranch: false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: manager.getUpdatedPackageFiles() reuseExistinbranch=false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: npm.updateDependency(): optionalDependencies.commander = ^6.1.0 || ^7.0.0 (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Updating commander in package.json (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Updated 1 package files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Getting updated lock files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Writing package.json files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "packageFiles": ["package.json"]
+DEBUG: Writing any updated package files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Writing package.json (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: No npmrc file found in repository (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Writing updated .npmrc file to /tmp/renovate/repos/github/ph-fritsche/renovate-config/.npmrc (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Generating yarn.lock for . (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Spawning yarn install to create /tmp/renovate/repos/github/ph-fritsche/renovate-config/yarn.lock (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Updating yarn.lock only - skipping node_modules (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: No node constraint found - using latest (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Executing command (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "command": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts"
+DEBUG: exec completed (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
+       "durationMs": 884,
+       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nsuccess Saved lockfile.\nDone in 0.72s.\n",
+       "stderr": "warning Skipping preferred cache folder \"/home/runner/.cache/yarn\" because it is not writable.\nwarning Selected the next writable cache folder in the list, will be \"/tmp/.yarn-cache-1001\".\nwarning Ignored scripts due to flag.\n"
+DEBUG: yarn.lock needs updating (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: updateYarnOffline resolvedPaths (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "resolvedPaths": []
+DEBUG: Updated 1 lock files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "updatedArtifacts": ["yarn.lock"]
+DEBUG: 2 file(s) to commit (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+ INFO: DRY-RUN: Would commit files to branch renovate/commander-7.x (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: processBranch with 2 upgrades (repository=ph-fritsche/renovate-config, dependencies=symfony/console,symfony/event-dispatcher, branch=renovate/major-symfony)
+DEBUG: Setting current branch to example (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: latest commit (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+       "branchName": "example",
+       "latestCommitDate": "2021-03-04T18:38:50+01:00"
+DEBUG: getBranchPr(renovate/major-symfony) (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: findPr(renovate/major-symfony, undefined, open) (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: branchExists=false (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: Branch has 2 upgrade(s) (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: recreateClosed is false (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: findPr(renovate/major-symfony, chore(deps): update symfony packages to v5 (major), !open) (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: prAlreadyExisted=false (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: Checking schedule(at any time, UTC) (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: No schedule defined (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: Branch needs creating (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: Using reuseExistingBranch: false (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: manager.getUpdatedPackageFiles() reuseExistinbranch=false (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: Starting search at index 218 (repository=ph-fritsche/renovate-config, packageFile=composer.json, branch=renovate/major-symfony)
+       "depName": "symfony/console"
+DEBUG: Found match at index 218 (repository=ph-fritsche/renovate-config, packageFile=composer.json, branch=renovate/major-symfony)
+       "depName": "symfony/console"
+DEBUG: Found composer lock file (repository=ph-fritsche/renovate-config, packageFile=composer.json, branch=renovate/major-symfony)
+DEBUG: Contents updated (repository=ph-fritsche/renovate-config, packageFile=composer.json, branch=renovate/major-symfony)
+       "depName": "symfony/console"
+DEBUG: Starting search at index 117 (repository=ph-fritsche/renovate-config, packageFile=composer.json, branch=renovate/major-symfony)
+       "depName": "symfony/event-dispatcher"
+DEBUG: Found match at index 117 (repository=ph-fritsche/renovate-config, packageFile=composer.json, branch=renovate/major-symfony)
+       "depName": "symfony/event-dispatcher"
+DEBUG: Found composer lock file (repository=ph-fritsche/renovate-config, packageFile=composer.json, branch=renovate/major-symfony)
+DEBUG: Contents updated (repository=ph-fritsche/renovate-config, packageFile=composer.json, branch=renovate/major-symfony)
+       "depName": "symfony/event-dispatcher"
+DEBUG: composer.updateArtifacts(composer.json) (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: Using composer cache /tmp/renovate/cache/others/composer (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: Using composer constraint from config (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: composer command (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+       "cmd": "composer",
+       "args": "update symfony/console symfony/event-dispatcher --with-dependencies --ignore-platform-reqs --no-ansi --no-interaction --no-scripts --no-autoloader"
+DEBUG: Executing command (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+       "command": "composer update symfony/console symfony/event-dispatcher --with-dependencies --ignore-platform-reqs --no-ansi --no-interaction --no-scripts --no-autoloader"
+DEBUG: exec completed (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+       "cmd": "composer update symfony/console symfony/event-dispatcher --with-dependencies --ignore-platform-reqs --no-ansi --no-interaction --no-scripts --no-autoloader",
+       "durationMs": 3537,
+       "stdout": "",
+       "stderr": "Loading composer repositories with package information\nUpdating dependencies\nLock file operations: 9 installs, 2 updates, 2 removals\n  - Removing psr/cache (1.0.1)\n  - Removing symfony/contracts (v1.1.10)\n  - Locking psr/event-dispatcher (1.0.0)\n  - Upgrading symfony/console (v4.2.12 => v5.2.4)\n  - Locking symfony/deprecation-contracts (v2.2.0)\n  - Upgrading symfony/event-dispatcher (v3.4.47 => v5.2.4)\n  - Locking symfony/event-dispatcher-contracts (v2.2.0)\n  - Locking symfony/polyfill-ctype (v1.22.1)\n  - Locking symfony/polyfill-intl-grapheme (v1.22.1)\n  - Locking symfony/polyfill-intl-normalizer (v1.22.1)\n  - Locking symfony/polyfill-php73 (v1.22.1)\n  - Locking symfony/service-contracts (v2.2.0)\n  - Locking symfony/string (v5.2.4)\nWriting lock file\nInstalling dependencies from lock file (including require-dev)\nPackage operations: 16 installs, 0 updates, 0 removals\n  - Downloading symfony/polyfill-php80 (v1.22.1)\n  - Downloading symfony/polyfill-mbstring (v1.22.1)\n  - Downloading symfony/polyfill-intl-normalizer (v1.22.1)\n  - Downloading symfony/polyfill-intl-grapheme (v1.22.1)\n  - Downloading symfony/polyfill-ctype (v1.22.1)\n  - Downloading symfony/string (v5.2.4)\n  - Downloading psr/container (1.0.0)\n  - Downloading symfony/service-contracts (v2.2.0)\n  - Downloading symfony/polyfill-php73 (v1.22.1)\n  - Downloading symfony/console (v5.2.4)\n  - Downloading psr/event-dispatcher (1.0.0)\n  - Downloading symfony/event-dispatcher-contracts (v2.2.0)\n  - Downloading symfony/deprecation-contracts (v2.2.0)\n  - Downloading symfony/event-dispatcher (v5.2.4)\n  - Downloading symfony/finder (v5.2.3)\n  - Downloading symfony/process (v5.2.3)\n  - Installing symfony/polyfill-php80 (v1.22.1): Extracting archive\n  - Installing symfony/polyfill-mbstring (v1.22.1): Extracting archive\n  - Installing symfony/polyfill-intl-normalizer (v1.22.1): Extracting archive\n  - Installing symfony/polyfill-intl-grapheme (v1.22.1): Extracting archive\n  - Installing symfony/polyfill-ctype (v1.22.1): Extracting archive\n  - Installing symfony/string (v5.2.4): Extracting archive\n  - Installing psr/container (1.0.0): Extracting archive\n  - Installing symfony/service-contracts (v2.2.0): Extracting archive\n  - Installing symfony/polyfill-php73 (v1.22.1): Extracting archive\n  - Installing symfony/console (v5.2.4): Extracting archive\n  - Installing psr/event-dispatcher (1.0.0): Extracting archive\n  - Installing symfony/event-dispatcher-contracts (v2.2.0): Extracting archive\n  - Installing symfony/deprecation-contracts (v2.2.0): Extracting archive\n  - Installing symfony/event-dispatcher (v5.2.4): Extracting archive\n  - Installing symfony/finder (v5.2.3): Extracting archive\n  - Installing symfony/process (v5.2.3): Extracting archive\n1 package suggestions were added by new dependencies, use `composer suggest` to see details.\n14 packages you are using are looking for funding.\nUse the `composer fund` command to find out more!\n"
+DEBUG: Returning updated composer.lock (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: Updated 1 package files (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: Getting updated lock files (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: Writing package.json files (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+       "packageFiles": ["package.json"]
+DEBUG: Writing any updated package files (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: Updated 1 lock files (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+       "updatedArtifacts": ["composer.lock"]
+DEBUG: 2 file(s) to commit (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+ INFO: DRY-RUN: Would commit files to branch renovate/major-symfony (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
+DEBUG: processBranch with 1 upgrades (repository=ph-fritsche/renovate-config, dependencies=chalk, branch=renovate/chalk-4.x)
+DEBUG: Setting current branch to example (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: latest commit (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+       "branchName": "example",
+       "latestCommitDate": "2021-03-04T18:38:50+01:00"
+DEBUG: getBranchPr(renovate/chalk-4.x) (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: findPr(renovate/chalk-4.x, undefined, open) (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: branchExists=false (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Branch has 1 upgrade(s) (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: recreateClosed is false (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: findPr(renovate/chalk-4.x, perf(deps): update dependency chalk to v4, !open) (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: prAlreadyExisted=false (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Checking schedule(at any time, UTC) (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: No schedule defined (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Branch needs creating (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Using reuseExistingBranch: false (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: manager.getUpdatedPackageFiles() reuseExistinbranch=false (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: npm.updateDependency(): peerDependencies.chalk = ^2.3.1 || ^4.0.0 (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Updating chalk in package.json (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Updated 1 package files (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Getting updated lock files (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Writing package.json files (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+       "packageFiles": ["package.json"]
+DEBUG: Writing any updated package files (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Writing package.json (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: No npmrc file found in repository (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Writing updated .npmrc file to /tmp/renovate/repos/github/ph-fritsche/renovate-config/.npmrc (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Generating yarn.lock for . (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Spawning yarn install to create /tmp/renovate/repos/github/ph-fritsche/renovate-config/yarn.lock (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Updating yarn.lock only - skipping node_modules (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: No node constraint found - using latest (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: Executing command (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+       "command": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts"
+DEBUG: exec completed (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+       "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
+       "durationMs": 676,
+       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nDone in 0.50s.\n",
+       "stderr": "warning Skipping preferred cache folder \"/home/runner/.cache/yarn\" because it is not writable.\nwarning Selected the next writable cache folder in the list, will be \"/tmp/.yarn-cache-1001\".\nwarning Ignored scripts due to flag.\n"
+DEBUG: yarn.lock hasn't changed (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: No updated lock files in branch (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: 1 file(s) to commit (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+ INFO: DRY-RUN: Would commit files to branch renovate/chalk-4.x (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: processBranch with 1 upgrades (repository=ph-fritsche/renovate-config, dependencies=lodash, branch=renovate/major-lodash-monorepo)
+DEBUG: Setting current branch to example (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: latest commit (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+       "branchName": "example",
+       "latestCommitDate": "2021-03-04T18:38:50+01:00"
+DEBUG: getBranchPr(renovate/major-lodash-monorepo) (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: findPr(renovate/major-lodash-monorepo, undefined, open) (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: branchExists=false (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Branch has 1 upgrade(s) (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: recreateClosed is false (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: findPr(renovate/major-lodash-monorepo, perf(deps): update dependency lodash to v4, !open) (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: prAlreadyExisted=false (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Checking schedule(at any time, UTC) (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: No schedule defined (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Branch needs creating (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Using reuseExistingBranch: false (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: manager.getUpdatedPackageFiles() reuseExistinbranch=false (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: npm.updateDependency(): dependencies.lodash = ^3.0.1 || ^4.0.0 (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Updating lodash in package.json (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Updated 1 package files (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Getting updated lock files (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Writing package.json files (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+       "packageFiles": ["package.json"]
+DEBUG: Writing any updated package files (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Writing package.json (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: No npmrc file found in repository (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Writing updated .npmrc file to /tmp/renovate/repos/github/ph-fritsche/renovate-config/.npmrc (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Generating yarn.lock for . (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Spawning yarn install to create /tmp/renovate/repos/github/ph-fritsche/renovate-config/yarn.lock (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Updating yarn.lock only - skipping node_modules (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: No node constraint found - using latest (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: Executing command (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+       "command": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts"
+DEBUG: exec completed (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+       "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
+       "durationMs": 2375,
+       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nsuccess Saved lockfile.\nDone in 2.20s.\n",
+       "stderr": "warning Skipping preferred cache folder \"/home/runner/.cache/yarn\" because it is not writable.\nwarning Selected the next writable cache folder in the list, will be \"/tmp/.yarn-cache-1001\".\nwarning Ignored scripts due to flag.\n"
+DEBUG: yarn.lock needs updating (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: updateYarnOffline resolvedPaths (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+       "resolvedPaths": []
+DEBUG: Updated 1 lock files (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+       "updatedArtifacts": ["yarn.lock"]
+DEBUG: 2 file(s) to commit (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+ INFO: DRY-RUN: Would commit files to branch renovate/major-lodash-monorepo (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
+DEBUG: processBranch with 2 upgrades (repository=ph-fritsche/renovate-config, dependencies=, branch=renovate/lock)
+DEBUG: Setting current branch to example (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: latest commit (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+       "branchName": "example",
+       "latestCommitDate": "2021-03-04T18:38:50+01:00"
+DEBUG: getBranchPr(renovate/lock) (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: findPr(renovate/lock, undefined, open) (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: branchExists=false (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: Branch has 0 upgrade(s) (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: recreateClosed is true (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: Checking schedule(before 5am, UTC) (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: Found timezone (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+       "timezone": "UTC"
+DEBUG: Adjusting now for timezone (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: Checking 1 schedule(s) (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: Checking schedule "before 5am" (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+       "parsedSchedule": {"schedules": [{"t_b": [18000]}], "exceptions": [], "error": -1}
+DEBUG: Does not match schedule because 54335 is later than 18000 (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: Package not scheduled (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: Skipping branch creation as not within schedule (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: Removing any stale branches (repository=ph-fritsche/renovate-config)
+DEBUG: config.repoIsOnboarded=true (repository=ph-fritsche/renovate-config)
+DEBUG: No renovate branches found (repository=ph-fritsche/renovate-config)
+DEBUG: Repository timing splits (milliseconds) (repository=ph-fritsche/renovate-config)
+       "splits": {"init": 1196, "extract": 617, "lookup": 4103, "update": 11078},
+       "total": 17125
+DEBUG: http statistics (repository=ph-fritsche/renovate-config)
+       "hostStats": [
+         "api.github.com, 43 requests, 108ms request average, 0ms queue average",
+         "packagist.org, 4 requests, 233ms request average, 0ms queue average",
+         "registry.npmjs.org, 8 requests, 146ms request average, 0ms queue average"
+       ],
+       "totalRequests": 55
+ INFO: Repository finished (repository=ph-fritsche/renovate-config)
+       "durationMs": 17125
+DEBUG: Renovate exiting
