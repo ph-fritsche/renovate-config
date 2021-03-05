@@ -3,85 +3,130 @@ name: PR
 on:
   pull_request:
 
-env:
-  LOG_LEVEL: debug
-  RENOVATE_CONFIG_FILE: renovate-ci.js
-
 jobs:
-  validate:
+  base:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v2
+    - uses: bahmutov/npm-install@v1
+      with:
+        install-command: npm -g i renovate
 
-      - name: validation
-        run: npx -p renovate renovate-config-validator
+    - name: checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.base_ref }}
 
-  dryrun:
-    needs: validate
+    - name: configure shell and git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        set -o pipefail
+
+    - name: renovate dry run
+      run: >
+        npx -p renovate renovate
+        --dry-run true
+        --token ${{ secrets.RENOVATE_DRYRUN }}
+        ${{ github.repository }}
+        2>&1 | tee renovate-ci.dryrun.log
+      env:
+        LOG_LEVEL: debug
+        RENOVATE_CONFIG_FILE: renovate-ci.js
+
+    - name: commit log
+      run: >
+        git add -f renovate-ci.dryrun.log
+        && git commit -m "ci: log (PR-${{ github.event.number }} / base)"
+        && echo "logCommit=$(git rev-parse HEAD)" >>$GITHUB_ENV
+        && git push -f origin HEAD:log
+
+    output:
+      logCommit: ${{ env.logCommit }}
+
+  head:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
-      - name: setup
-        run: set -o pipefail
+    - uses: bahmutov/npm-install@v1
+      with:
+        install-command: npm -g i renovate
 
-      - name: checkout base_ref
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.base_ref }}
+    - name: checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.sha }}
 
-      - name: renovate dry run on base_ref
-        run: >
-          npx -p renovate renovate
-          --dry-run true
-          --token ${{ secrets.RENOVATE_DRYRUN }}
-          ${{ github.repository }}
-          2>&1 | tee renovate-ci.log
+    - name: configure shell and git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        set -o pipefail
 
-      - name: stash log for base_ref
-        run: >
-          git add -f renovate-ci.log
-          && git stash -- renovate-ci.log
+    - name: renovate dry run
+      run: >
+        npx -p renovate renovate
+        --dry-run true
+        --token ${{ secrets.RENOVATE_DRYRUN }}
+        ${{ github.repository }}
+        2>&1 | tee renovate-ci.dryrun.log
+      env:
+        LOG_LEVEL: debug
+        RENOVATE_CONFIG_FILE: renovate-ci.js
 
-      - name: checkout head_ref
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
+    - name: commit log
+      run: >
+        git add -f renovate-ci.dryrun.log
+        && git commit -m "ci: log (PR-${{ github.event.number }} / head)"
+        && echo "logCommit=$(git rev-parse HEAD)" >>$GITHUB_ENV
+        && git push -f origin HEAD:log
 
-      - name: configure git user
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - name: pop stash and commit log for base_ref
-        run: >
-          git stash pop
-          && git add -f renovate-ci.log
-          && git commit -m "ci: log (base)"
+    output:
+      logCommit: ${{ env.logCommit }}
 
-      - name: renovate dry run on head_ref
-        run: >
-          npx -p renovate renovate
-          --dry-run true
-          --token ${{ secrets.RENOVATE_DRYRUN }}
-          ${{ github.repository }}
-          2>&1 | tee renovate-ci.log
+  log:
+    needs:
+      - base
+      - head
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
 
-      - name: commit log for head_ref
-        run: >
-          git add -f renovate-ci.log
-          && git commit -m "ci: log (head)"
-          && echo "logCommit=$(git rev-parse HEAD)" >>$GITHUB_ENV
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.sha }}
 
-      - name: push commits
-        run: git push -f origin HEAD:log
+    - name: configure git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Add comment linking to the log commit
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          message: |
-            The changes introduced when merging commit ${{ github.sha }}
-            can be viewed [here](https://github.com/${{ github.repository }}/commit/${{ env.logCommit }}).
+    - name: add base log
+      run: >
+        git fetch origin ${{ needs.base.outputs.logCommit }}
+        && git checkout ${{ needs.base.outputs.logCommit }} -- renovate-ci.dryrun.log
+        && git add -f renovate-ci.dryrun.log
+        && git commit -m "ci: log (PR-${{ github.event.number }} / base)"
 
+    - name: add head log
+      run: >
+        git fetch origin ${{ needs.head.outputs.logCommit }}
+        && git checkout ${{ needs.head.outputs.logCommit }} -- renovate-ci.dryrun.log
+        && git add -f renovate-ci.dryrun.log
+        && git commit -m "ci: log (PR-${{ github.event.number }} / head)"
+
+    - name: push commits
+      run: >
+        echo "logCommit=$(git rev-parse HEAD)" >>$GITHUB_ENV
+        && git push -f origin HEAD:log
+
+    - name: Add comment linking to the log commit
+      uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        message: |
+          The changes introduced when merging commit ${{ github.sha }}
+          can be viewed [here](https://github.com/${{ github.repository }}/commit/${{ env.logCommit }}).
