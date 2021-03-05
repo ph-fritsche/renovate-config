@@ -1315,15 +1315,16 @@ DEBUG: File config
              "allowedVersions": "!/^1\\.0-\\d+-[a-fA-F0-9]{7}$/"
            },
            {
-             "matchDepTypes": ["require", "dependencies", "peerDependencies"],
+             "matchDepTypes": [
+               "require",
+               "dependencies",
+               "peerDependencies",
+               "optionalDependencies"
+             ],
              "semanticCommitType": "perf"
            },
            {
-             "matchDepTypes": [
-               "devDependencies",
-               "peerDevDependencies",
-               "require-dev"
-             ],
+             "matchDepTypes": ["require-dev", "devDependencies"],
              "rangeStrategy": "replace"
            }
          ],
@@ -2677,15 +2678,16 @@ DEBUG: Combined config
              "allowedVersions": "!/^1\\.0-\\d+-[a-fA-F0-9]{7}$/"
            },
            {
-             "matchDepTypes": ["require", "dependencies", "peerDependencies"],
+             "matchDepTypes": [
+               "require",
+               "dependencies",
+               "peerDependencies",
+               "optionalDependencies"
+             ],
              "semanticCommitType": "perf"
            },
            {
-             "matchDepTypes": [
-               "devDependencies",
-               "peerDevDependencies",
-               "require-dev"
-             ],
+             "matchDepTypes": ["require-dev", "devDependencies"],
              "rangeStrategy": "replace"
            }
          ],
@@ -2746,7 +2748,7 @@ DEBUG: isOnboarded() (repository=ph-fritsche/renovate-config)
 DEBUG: findFile(renovate.json) (repository=ph-fritsche/renovate-config)
 DEBUG: Initializing git repository into /tmp/renovate/repos/github/ph-fritsche/renovate-config (repository=ph-fritsche/renovate-config)
 DEBUG: git clone completed (repository=ph-fritsche/renovate-config)
-       "durationMs": 295
+       "durationMs": 285
 DEBUG: latest commit (repository=ph-fritsche/renovate-config)
        "latestCommitDate": "2021-03-05T16:01:48+01:00"
 DEBUG: Setting git author name (repository=ph-fritsche/renovate-config)
@@ -3449,12 +3451,12 @@ DEBUG: PR hourly limit remaining: 2 (repository=ph-fritsche/renovate-config)
 DEBUG: Calculating prConcurrentLimit (20) (repository=ph-fritsche/renovate-config)
 DEBUG: getBranchPr(renovate/axios-0.x) (repository=ph-fritsche/renovate-config)
 DEBUG: findPr(renovate/axios-0.x, undefined, open) (repository=ph-fritsche/renovate-config)
-DEBUG: getBranchPr(renovate/commander-7.x) (repository=ph-fritsche/renovate-config)
-DEBUG: findPr(renovate/commander-7.x, undefined, open) (repository=ph-fritsche/renovate-config)
 DEBUG: getBranchPr(renovate/major-symfony) (repository=ph-fritsche/renovate-config)
 DEBUG: findPr(renovate/major-symfony, undefined, open) (repository=ph-fritsche/renovate-config)
 DEBUG: getBranchPr(renovate/chalk-4.x) (repository=ph-fritsche/renovate-config)
 DEBUG: findPr(renovate/chalk-4.x, undefined, open) (repository=ph-fritsche/renovate-config)
+DEBUG: getBranchPr(renovate/commander-7.x) (repository=ph-fritsche/renovate-config)
+DEBUG: findPr(renovate/commander-7.x, undefined, open) (repository=ph-fritsche/renovate-config)
 DEBUG: getBranchPr(renovate/major-lodash-monorepo) (repository=ph-fritsche/renovate-config)
 DEBUG: findPr(renovate/major-lodash-monorepo, undefined, open) (repository=ph-fritsche/renovate-config)
 DEBUG: getBranchPr(renovate/lock) (repository=ph-fritsche/renovate-config)
@@ -3505,8 +3507,8 @@ DEBUG: Executing command (repository=ph-fritsche/renovate-config, branch=renovat
        "command": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts"
 DEBUG: exec completed (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
        "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
-       "durationMs": 3031,
-       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nsuccess Saved lockfile.\nDone in 2.71s.\n",
+       "durationMs": 3229,
+       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nsuccess Saved lockfile.\nDone in 2.89s.\n",
        "stderr": "warning Skipping preferred cache folder \"/home/runner/.cache/yarn\" because it is not writable.\nwarning Selected the next writable cache folder in the list, will be \"/tmp/.yarn-cache-1001\".\nwarning Ignored scripts due to flag.\n"
 DEBUG: yarn.lock needs updating (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
 DEBUG: updateYarnOffline resolvedPaths (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
@@ -3515,51 +3517,6 @@ DEBUG: Updated 1 lock files (repository=ph-fritsche/renovate-config, branch=reno
        "updatedArtifacts": ["yarn.lock"]
 DEBUG: 2 file(s) to commit (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
  INFO: DRY-RUN: Would commit files to branch renovate/axios-0.x (repository=ph-fritsche/renovate-config, branch=renovate/axios-0.x)
-DEBUG: processBranch with 1 upgrades (repository=ph-fritsche/renovate-config, dependencies=commander, branch=renovate/commander-7.x)
-DEBUG: Setting current branch to example (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: latest commit (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-       "branchName": "example",
-       "latestCommitDate": "2021-03-04T18:38:50+01:00"
-DEBUG: getBranchPr(renovate/commander-7.x) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: findPr(renovate/commander-7.x, undefined, open) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: branchExists=false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Branch has 1 upgrade(s) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: recreateClosed is false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: findPr(renovate/commander-7.x, chore(deps): update dependency commander to v7, !open) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: prAlreadyExisted=false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Checking schedule(at any time, UTC) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: No schedule defined (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Branch needs creating (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Using reuseExistingBranch: false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: manager.getUpdatedPackageFiles() reuseExistinbranch=false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: npm.updateDependency(): optionalDependencies.commander = ^6.1.0 || ^7.0.0 (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Updating commander in package.json (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Updated 1 package files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Getting updated lock files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Writing package.json files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-       "packageFiles": ["package.json"]
-DEBUG: Writing any updated package files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Writing package.json (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: No npmrc file found in repository (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Writing updated .npmrc file to /tmp/renovate/repos/github/ph-fritsche/renovate-config/.npmrc (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Generating yarn.lock for . (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Spawning yarn install to create /tmp/renovate/repos/github/ph-fritsche/renovate-config/yarn.lock (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Updating yarn.lock only - skipping node_modules (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: No node constraint found - using latest (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: Executing command (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-       "command": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts"
-DEBUG: exec completed (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-       "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
-       "durationMs": 884,
-       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nsuccess Saved lockfile.\nDone in 0.72s.\n",
-       "stderr": "warning Skipping preferred cache folder \"/home/runner/.cache/yarn\" because it is not writable.\nwarning Selected the next writable cache folder in the list, will be \"/tmp/.yarn-cache-1001\".\nwarning Ignored scripts due to flag.\n"
-DEBUG: yarn.lock needs updating (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-DEBUG: updateYarnOffline resolvedPaths (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-       "resolvedPaths": []
-DEBUG: Updated 1 lock files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
-       "updatedArtifacts": ["yarn.lock"]
-DEBUG: 2 file(s) to commit (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
- INFO: DRY-RUN: Would commit files to branch renovate/commander-7.x (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
 DEBUG: processBranch with 2 upgrades (repository=ph-fritsche/renovate-config, dependencies=symfony/console,symfony/event-dispatcher, branch=renovate/major-symfony)
 DEBUG: Setting current branch to example (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
 DEBUG: latest commit (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
@@ -3601,7 +3558,7 @@ DEBUG: Executing command (repository=ph-fritsche/renovate-config, branch=renovat
        "command": "composer update symfony/console symfony/event-dispatcher --with-dependencies --ignore-platform-reqs --no-ansi --no-interaction --no-scripts --no-autoloader"
 DEBUG: exec completed (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
        "cmd": "composer update symfony/console symfony/event-dispatcher --with-dependencies --ignore-platform-reqs --no-ansi --no-interaction --no-scripts --no-autoloader",
-       "durationMs": 3537,
+       "durationMs": 3364,
        "stdout": "",
        "stderr": "Loading composer repositories with package information\nUpdating dependencies\nLock file operations: 9 installs, 2 updates, 2 removals\n  - Removing psr/cache (1.0.1)\n  - Removing symfony/contracts (v1.1.10)\n  - Locking psr/event-dispatcher (1.0.0)\n  - Upgrading symfony/console (v4.2.12 => v5.2.4)\n  - Locking symfony/deprecation-contracts (v2.2.0)\n  - Upgrading symfony/event-dispatcher (v3.4.47 => v5.2.4)\n  - Locking symfony/event-dispatcher-contracts (v2.2.0)\n  - Locking symfony/polyfill-ctype (v1.22.1)\n  - Locking symfony/polyfill-intl-grapheme (v1.22.1)\n  - Locking symfony/polyfill-intl-normalizer (v1.22.1)\n  - Locking symfony/polyfill-php73 (v1.22.1)\n  - Locking symfony/service-contracts (v2.2.0)\n  - Locking symfony/string (v5.2.4)\nWriting lock file\nInstalling dependencies from lock file (including require-dev)\nPackage operations: 16 installs, 0 updates, 0 removals\n  - Downloading symfony/polyfill-php80 (v1.22.1)\n  - Downloading symfony/polyfill-mbstring (v1.22.1)\n  - Downloading symfony/polyfill-intl-normalizer (v1.22.1)\n  - Downloading symfony/polyfill-intl-grapheme (v1.22.1)\n  - Downloading symfony/polyfill-ctype (v1.22.1)\n  - Downloading symfony/string (v5.2.4)\n  - Downloading psr/container (1.0.0)\n  - Downloading symfony/service-contracts (v2.2.0)\n  - Downloading symfony/polyfill-php73 (v1.22.1)\n  - Downloading symfony/console (v5.2.4)\n  - Downloading psr/event-dispatcher (1.0.0)\n  - Downloading symfony/event-dispatcher-contracts (v2.2.0)\n  - Downloading symfony/deprecation-contracts (v2.2.0)\n  - Downloading symfony/event-dispatcher (v5.2.4)\n  - Downloading symfony/finder (v5.2.3)\n  - Downloading symfony/process (v5.2.3)\n  - Installing symfony/polyfill-php80 (v1.22.1): Extracting archive\n  - Installing symfony/polyfill-mbstring (v1.22.1): Extracting archive\n  - Installing symfony/polyfill-intl-normalizer (v1.22.1): Extracting archive\n  - Installing symfony/polyfill-intl-grapheme (v1.22.1): Extracting archive\n  - Installing symfony/polyfill-ctype (v1.22.1): Extracting archive\n  - Installing symfony/string (v5.2.4): Extracting archive\n  - Installing psr/container (1.0.0): Extracting archive\n  - Installing symfony/service-contracts (v2.2.0): Extracting archive\n  - Installing symfony/polyfill-php73 (v1.22.1): Extracting archive\n  - Installing symfony/console (v5.2.4): Extracting archive\n  - Installing psr/event-dispatcher (1.0.0): Extracting archive\n  - Installing symfony/event-dispatcher-contracts (v2.2.0): Extracting archive\n  - Installing symfony/deprecation-contracts (v2.2.0): Extracting archive\n  - Installing symfony/event-dispatcher (v5.2.4): Extracting archive\n  - Installing symfony/finder (v5.2.3): Extracting archive\n  - Installing symfony/process (v5.2.3): Extracting archive\n1 package suggestions were added by new dependencies, use `composer suggest` to see details.\n14 packages you are using are looking for funding.\nUse the `composer fund` command to find out more!\n"
 DEBUG: Returning updated composer.lock (repository=ph-fritsche/renovate-config, branch=renovate/major-symfony)
@@ -3649,13 +3606,58 @@ DEBUG: Executing command (repository=ph-fritsche/renovate-config, branch=renovat
        "command": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts"
 DEBUG: exec completed (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
        "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
-       "durationMs": 676,
-       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nDone in 0.50s.\n",
+       "durationMs": 880,
+       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nDone in 0.69s.\n",
        "stderr": "warning Skipping preferred cache folder \"/home/runner/.cache/yarn\" because it is not writable.\nwarning Selected the next writable cache folder in the list, will be \"/tmp/.yarn-cache-1001\".\nwarning Ignored scripts due to flag.\n"
 DEBUG: yarn.lock hasn't changed (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
 DEBUG: No updated lock files in branch (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
 DEBUG: 1 file(s) to commit (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
  INFO: DRY-RUN: Would commit files to branch renovate/chalk-4.x (repository=ph-fritsche/renovate-config, branch=renovate/chalk-4.x)
+DEBUG: processBranch with 1 upgrades (repository=ph-fritsche/renovate-config, dependencies=commander, branch=renovate/commander-7.x)
+DEBUG: Setting current branch to example (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: latest commit (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "branchName": "example",
+       "latestCommitDate": "2021-03-04T18:38:50+01:00"
+DEBUG: getBranchPr(renovate/commander-7.x) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: findPr(renovate/commander-7.x, undefined, open) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: branchExists=false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Branch has 1 upgrade(s) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: recreateClosed is false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: findPr(renovate/commander-7.x, perf(deps): update dependency commander to v7, !open) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: prAlreadyExisted=false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Checking schedule(at any time, UTC) (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: No schedule defined (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Branch needs creating (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Using reuseExistingBranch: false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: manager.getUpdatedPackageFiles() reuseExistinbranch=false (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: npm.updateDependency(): optionalDependencies.commander = ^6.1.0 || ^7.0.0 (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Updating commander in package.json (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Updated 1 package files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Getting updated lock files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Writing package.json files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "packageFiles": ["package.json"]
+DEBUG: Writing any updated package files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Writing package.json (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: No npmrc file found in repository (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Writing updated .npmrc file to /tmp/renovate/repos/github/ph-fritsche/renovate-config/.npmrc (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Generating yarn.lock for . (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Spawning yarn install to create /tmp/renovate/repos/github/ph-fritsche/renovate-config/yarn.lock (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Updating yarn.lock only - skipping node_modules (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: No node constraint found - using latest (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: Executing command (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "command": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts"
+DEBUG: exec completed (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
+       "durationMs": 890,
+       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nsuccess Saved lockfile.\nDone in 0.71s.\n",
+       "stderr": "warning Skipping preferred cache folder \"/home/runner/.cache/yarn\" because it is not writable.\nwarning Selected the next writable cache folder in the list, will be \"/tmp/.yarn-cache-1001\".\nwarning Ignored scripts due to flag.\n"
+DEBUG: yarn.lock needs updating (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+DEBUG: updateYarnOffline resolvedPaths (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "resolvedPaths": []
+DEBUG: Updated 1 lock files (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+       "updatedArtifacts": ["yarn.lock"]
+DEBUG: 2 file(s) to commit (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
+ INFO: DRY-RUN: Would commit files to branch renovate/commander-7.x (repository=ph-fritsche/renovate-config, branch=renovate/commander-7.x)
 DEBUG: processBranch with 1 upgrades (repository=ph-fritsche/renovate-config, dependencies=lodash, branch=renovate/major-lodash-monorepo)
 DEBUG: Setting current branch to example (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
 DEBUG: latest commit (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
@@ -3691,8 +3693,8 @@ DEBUG: Executing command (repository=ph-fritsche/renovate-config, branch=renovat
        "command": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts"
 DEBUG: exec completed (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
        "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
-       "durationMs": 2375,
-       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nsuccess Saved lockfile.\nDone in 2.20s.\n",
+       "durationMs": 2272,
+       "stdout": "yarn install v1.22.5\n[1/4] Resolving packages...\n[2/4] Fetching packages...\n[3/4] Linking dependencies...\n[4/4] Building fresh packages...\nsuccess Saved lockfile.\nDone in 2.09s.\n",
        "stderr": "warning Skipping preferred cache folder \"/home/runner/.cache/yarn\" because it is not writable.\nwarning Selected the next writable cache folder in the list, will be \"/tmp/.yarn-cache-1001\".\nwarning Ignored scripts due to flag.\n"
 DEBUG: yarn.lock needs updating (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
 DEBUG: updateYarnOffline resolvedPaths (repository=ph-fritsche/renovate-config, branch=renovate/major-lodash-monorepo)
@@ -3718,22 +3720,22 @@ DEBUG: Adjusting now for timezone (repository=ph-fritsche/renovate-config, branc
 DEBUG: Checking 1 schedule(s) (repository=ph-fritsche/renovate-config, branch=renovate/lock)
 DEBUG: Checking schedule "before 5am" (repository=ph-fritsche/renovate-config, branch=renovate/lock)
        "parsedSchedule": {"schedules": [{"t_b": [18000]}], "exceptions": [], "error": -1}
-DEBUG: Does not match schedule because 54335 is later than 18000 (repository=ph-fritsche/renovate-config, branch=renovate/lock)
+DEBUG: Does not match schedule because 54282 is later than 18000 (repository=ph-fritsche/renovate-config, branch=renovate/lock)
 DEBUG: Package not scheduled (repository=ph-fritsche/renovate-config, branch=renovate/lock)
 DEBUG: Skipping branch creation as not within schedule (repository=ph-fritsche/renovate-config, branch=renovate/lock)
 DEBUG: Removing any stale branches (repository=ph-fritsche/renovate-config)
 DEBUG: config.repoIsOnboarded=true (repository=ph-fritsche/renovate-config)
 DEBUG: No renovate branches found (repository=ph-fritsche/renovate-config)
 DEBUG: Repository timing splits (milliseconds) (repository=ph-fritsche/renovate-config)
-       "splits": {"init": 1196, "extract": 617, "lookup": 4103, "update": 11078},
-       "total": 17125
+       "splits": {"init": 1272, "extract": 598, "lookup": 4433, "update": 11374},
+       "total": 17804
 DEBUG: http statistics (repository=ph-fritsche/renovate-config)
        "hostStats": [
-         "api.github.com, 43 requests, 108ms request average, 0ms queue average",
-         "packagist.org, 4 requests, 233ms request average, 0ms queue average",
-         "registry.npmjs.org, 8 requests, 146ms request average, 0ms queue average"
+         "api.github.com, 43 requests, 115ms request average, 0ms queue average",
+         "packagist.org, 4 requests, 269ms request average, 0ms queue average",
+         "registry.npmjs.org, 8 requests, 159ms request average, 0ms queue average"
        ],
        "totalRequests": 55
  INFO: Repository finished (repository=ph-fritsche/renovate-config)
-       "durationMs": 17125
+       "durationMs": 17804
 DEBUG: Renovate exiting
