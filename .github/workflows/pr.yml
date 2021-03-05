@@ -45,7 +45,7 @@ jobs:
         && echo "logCommit=$(git rev-parse HEAD)" >>$GITHUB_ENV
         && git push -f origin HEAD:log
 
-    output:
+    outputs:
       logCommit: ${{ env.logCommit }}
 
   head:
@@ -89,7 +89,7 @@ jobs:
         && echo "logCommit=$(git rev-parse HEAD)" >>$GITHUB_ENV
         && git push -f origin HEAD:log
 
-    output:
+    outputs:
       logCommit: ${{ env.logCommit }}
 
   log:
