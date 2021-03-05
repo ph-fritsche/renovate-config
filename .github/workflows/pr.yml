@@ -9,10 +9,11 @@ jobs:
     timeout-minutes: 10
 
     steps:
-    - uses: bahmutov/npm-install@v1
-      with:
-        install-command: npm -g i renovate
-        useLockFile: false
+    - uses: actions/cache@v2
+      path: ~./npm
+      key: npm-renovate
+    - name: install renovate
+      run: npm -g i renovate
 
     - name: checkout
       uses: actions/checkout@v2
@@ -51,10 +52,11 @@ jobs:
     timeout-minutes: 10
 
     steps:
-    - uses: bahmutov/npm-install@v1
-      with:
-        install-command: npm -g i renovate
-        useLockFile: false
+    - uses: actions/cache@v2
+      path: ~./npm
+      key: npm-renovate
+    - name: install renovate
+      run: npm -g i renovate
 
     - name: checkout
       uses: actions/checkout@v2

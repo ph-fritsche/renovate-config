@@ -10,15 +10,16 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: bahmutov/npm-install@v1
-        with:
-          install-command: npm -g i renovate
-          useLockFile: false
+    - uses: actions/cache@v2
+      path: ~./npm
+      key: npm-renovate
+    - name: install renovate
+      run: npm -g i renovate
 
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-      - name: validation
-        run: npx renovate-config-validator
-        env:
-          LOG_LEVEL: debug
-          RENOVATE_CONFIG_FILE: renovate-ci.js
+    - name: validation
+      run: npx renovate-config-validator
+      env:
+        LOG_LEVEL: debug
+        RENOVATE_CONFIG_FILE: renovate-ci.js
